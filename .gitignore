@@ -1,0 +1,27 @@
+# Hugo build output
+/public/
+
+# Hugo cache
+/resources/_gen/
+/hugo_stats.json
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.swp
+*.swo
+*.bak
+*~
+
+# Node/npm stuff (nếu dùng)
+node_modules/
+npm-debug.log
+
+# VS Code
+.vscode/
+
+# Git submodule lock
+.gitmodules
+
