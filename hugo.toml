@@ -1,4 +1,30 @@
 baseURL = 'https://nguyenhuy158.github.io/funny_moments/'
 languageCode = 'en-us'
 title = 'Funny Moments'
-theme = 'papermod'
+theme = 'yinyang'
+
+[params]
+headTitle = "Funny Moments"
+mainSections = ["posts"]
+author = "nguyenhuy158"
+description = "Blog cá nhân về tech và mấy thứ vui vui"
+
+[languages]
+[languages.en]
+contentDir = "content"
+languageName = "English"
+weight = 1
+[languages.vi]
+contentDir = "content"
+languageName = "Vietnamese"
+weight = 2
+
+[[params.socials]]
+name = "About Me"
+link = "https://github.com/nguyenhuy158"
+[[params.socials]]
+name = "Github"
+link = "https://github.com/nguyenhuy158"
+[[params.socials]]
+name = "twitter"
+link = "https://github.com/nguyenhuy158"
