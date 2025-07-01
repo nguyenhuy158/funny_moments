@@ -1,7 +1,14 @@
 +++
-date = '2025-07-01T21:59:31+07:00'
-draft = false
-title = 'Deploy Ghost With Docker'
+draft = true
+date = 2025-07-01T21:59:31+07:00
+title = "Deploy Ghost With Docker"
+description = ""
+slug = ""
+authors = []
+tags = []
+categories = []
+externalLink = ""
+series = []
 +++
 
 Ghost is one of the best platforms for beginners who wanna start blogging fast.  
