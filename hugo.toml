@@ -1,7 +1,7 @@
 baseURL = 'https://nguyenhuy158.github.io/funny_moments/'
 languageCode = 'en-us'
 title = 'Funny Moments'
-theme = 'yinyang'
+theme = 'papermod'
 
 [params]
 headTitle = "Funny Moments"
