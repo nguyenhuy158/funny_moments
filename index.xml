@@ -11,8 +11,28 @@
     </image>
     <generator>Hugo -- 0.147.3</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Jul 2025 15:02:56 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 02 Jul 2025 16:53:20 +0700</lastBuildDate>
     <atom:link href="https://blog.bestcyberbot.click/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Special Characters</title>
+      <link>https://blog.bestcyberbot.click/posts/special-characters/</link>
+      <pubDate>Wed, 02 Jul 2025 16:53:20 +0700</pubDate>
+      <guid>https://blog.bestcyberbot.click/posts/special-characters/</guid>
+      <description>&lt;p&gt;Khi viết blog, bạn có thể cần dùng các ký tự như &lt;code&gt;&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;&lt;/code&gt;, &lt;code&gt;&amp;lt;=&lt;/code&gt;, &lt;code&gt;&amp;gt;=&lt;/code&gt;, &lt;code&gt;&amp;amp;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Để tránh lỗi hiển thị, hãy chuyển chúng như sau:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&lt;/code&gt; → &lt;code&gt;&amp;amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;&lt;/code&gt; → &lt;code&gt;&amp;amp;lt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;=&lt;/code&gt; → &lt;code&gt;&amp;amp;lt;=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;=&lt;/code&gt; → &lt;code&gt;&amp;amp;gt;=&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;&lt;/code&gt; → &lt;code&gt;&amp;amp;amp;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ví dụ code hiển thị đúng:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;if (a &lt;span class=&#34;ni&#34;&gt;&amp;amp;lt;&lt;/span&gt;= b &lt;span class=&#34;ni&#34;&gt;&amp;amp;amp;&amp;amp;amp;&lt;/span&gt; b &lt;span class=&#34;ni&#34;&gt;&amp;amp;gt;&lt;/span&gt;= c) {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  return true;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>Best Chrome Extension</title>
       <link>https://blog.bestcyberbot.click/posts/best-chrome-extension/</link>
