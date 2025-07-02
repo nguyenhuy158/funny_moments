@@ -48,12 +48,5 @@ Below is a simple &lt;code&gt;docker-compose.yml&lt;/code&gt; setup to get you g
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;./ghost-data:/var/lib/ghost/content&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    <item>
-      <title>first blog</title>
-      <link>https://blog.bestcyberbot.click/posts/hello-world/</link>
-      <pubDate>Tue, 01 Jul 2025 21:31:41 +0700</pubDate>
-      <guid>https://blog.bestcyberbot.click/posts/hello-world/</guid>
-      <description>&lt;p&gt;kkk welcome to my blog&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>
