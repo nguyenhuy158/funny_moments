@@ -2,7 +2,7 @@
 date = '2025-07-01T22:09:21+07:00'
 draft = false
 title = 'Tip Move Repo Gitlab Github'
-author = "nguyenhuy158"
+author = []
 summary = "Cách chuyển repo từ GitLab sang GitHub (hoặc ngược lại) mà giữ nguyên lịch sử, branch, tag chỉ với vài dòng lệnh bash."
 tags = ["git", "github", "gitlab", "mirror", "tip"]
 +++
