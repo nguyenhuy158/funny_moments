@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 date = 2025-07-01T21:59:31+07:00
 title = "Deploy Ghost With Docker"
 description = ""
@@ -11,7 +11,7 @@ externalLink = ""
 series = []
 +++
 
-Ghost is one of the best platforms for beginners who wanna start blogging fast.  
+Ghost is one of the best platforms for beginners who wanna start blogging fast.
 Below is a simple `docker-compose.yml` setup to get you going right away:
 
 ```yaml
