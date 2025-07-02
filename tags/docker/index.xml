@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Funny Moments</title>
+    <link>http://localhost:1313/tags/docker/</link>
+    <description>Recent content in Docker on Funny Moments</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 01 Jul 2025 22:07:45 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tip Check Docker Volume Size</title>
+      <link>http://localhost:1313/posts/tip-check-docker-volume-size/</link>
+      <pubDate>Tue, 01 Jul 2025 22:07:45 +0700</pubDate>
+      <guid>http://localhost:1313/posts/tip-check-docker-volume-size/</guid>
+      <description>Cách kiểm tra dung lượng Docker volume một cách nhanh gọn bằng lệnh CLI.</description>
+    </item>
+  </channel>
+</rss>
