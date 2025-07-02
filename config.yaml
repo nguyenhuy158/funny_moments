@@ -1,0 +1,128 @@
+baseURL: "https://blog.hyit08.xyz"
+languageCode: "en-us"
+title: "Funny Moments"
+theme: "papermod"
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: "Funny Moments"
+  headTitle: "Funny Moments"
+  description: "Blog cá nhân về tech và mấy thứ vui vui"
+  mainSections:
+    - "posts"
+  author: "me"
+  defaultTheme: "dark"
+  keywords: [Blog, Portfolio, PaperMod]
+  images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "02/01/06"
+
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: false
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "images/sea.png"
+    favicon16x16: "images/sea.png"
+    favicon32x32: "images/sea.png"
+    apple_touch_icon: "images/sea.png"
+    safari_pinned_tab: "images/sea.png"
+
+  label:
+    # text: "Home"
+    icon: images/sea.png
+    iconHeight: 35
+
+  analytics:
+    google:
+      SiteVerificationTag: "XYZabc"
+    bing:
+      SiteVerificationTag: "XYZabc"
+    yandex:
+      SiteVerificationTag: "XYZabc"
+
+  homeInfoParams:
+    ShowShareButtons: true
+    ShareButtons: ["linkedin", "twitter"]
+    Title: "Hi there, I'm Huy \U0001F44B"
+    Content: "Blog cá nhân về tech và mấy thứ vui vui"
+
+  socialIcons:
+    - name: "Github"
+      url: "https://github.com/nguyenhuy158"
+    - name: "Youtube"
+      url: "https://youtube.com/@ntqhuy2k2"
+    - name: "Linkedin"
+      url: "https://www.linkedin.com/in/nguyenhuy158"
+    - name: "gitlab"
+      url: "http://gitlab.com/huy.ntq02"
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+
+
+menu:
+  main:
+    - identifier: categories
+      name: categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 20
+    - identifier: trick
+      name: trick
+      url: /trick/
+      weight: 30
+
+pygmentsUseClasses: true
+
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
+
+pagination:
+  pagerSize: 10
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
