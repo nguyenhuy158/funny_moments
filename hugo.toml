@@ -8,6 +8,23 @@ headTitle = "Funny Moments"
 mainSections = ["posts"]
 author = "nguyenhuy158"
 description = "Blog cá nhân về tech và mấy thứ vui vui"
+defaultTheme = "dark"
+
+[params.homeInfoParams]
+  Title = "Hi there wave"
+  Content = "Can be Info, links, about..."
+[[params.socialIcons]]
+  name = "Github"
+  url = "https://github.com/nguyenhuy158"
+[[params.socialIcons]]
+  name = "Youtube"
+  url = "https://youtube.com/@ntqhuy2k2"
+[[params.socialIcons]]
+  name = "Linkedin"
+  url = "https://www.linkedin.com/in/nguyenhuy158/"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"] # JSON cần cho search
 
 [languages]
 [languages.en]
