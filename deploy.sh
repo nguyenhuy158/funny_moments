@@ -8,6 +8,9 @@ git push origin main
 # build site
 hugo
 
+# copy CNAME vào public/
+cp CNAME public/
+
 # vào thư mục public
 cd public
 
@@ -23,4 +26,3 @@ git push -f origin gh-pages
 
 # quay lại root
 cd ..
-
