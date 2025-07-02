@@ -11,6 +11,56 @@
     </image>
     <generator>Hugo -- 0.147.3</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 01 Jul 2025 22:09:21 +0700</lastBuildDate>
     <atom:link href="https://blog.bestcyberbot.click/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git</title>
+      <link>https://blog.bestcyberbot.click/tags/git/</link>
+      <pubDate>Tue, 01 Jul 2025 22:09:21 +0700</pubDate>
+      <guid>https://blog.bestcyberbot.click/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Github</title>
+      <link>https://blog.bestcyberbot.click/tags/github/</link>
+      <pubDate>Tue, 01 Jul 2025 22:09:21 +0700</pubDate>
+      <guid>https://blog.bestcyberbot.click/tags/github/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gitlab</title>
+      <link>https://blog.bestcyberbot.click/tags/gitlab/</link>
+      <pubDate>Tue, 01 Jul 2025 22:09:21 +0700</pubDate>
+      <guid>https://blog.bestcyberbot.click/tags/gitlab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mirror</title>
+      <link>https://blog.bestcyberbot.click/tags/mirror/</link>
+      <pubDate>Tue, 01 Jul 2025 22:09:21 +0700</pubDate>
+      <guid>https://blog.bestcyberbot.click/tags/mirror/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tip</title>
+      <link>https://blog.bestcyberbot.click/tags/tip/</link>
+      <pubDate>Tue, 01 Jul 2025 22:09:21 +0700</pubDate>
+      <guid>https://blog.bestcyberbot.click/tags/tip/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://blog.bestcyberbot.click/tags/docker/</link>
+      <pubDate>Tue, 01 Jul 2025 22:07:45 +0700</pubDate>
+      <guid>https://blog.bestcyberbot.click/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Volume</title>
+      <link>https://blog.bestcyberbot.click/tags/volume/</link>
+      <pubDate>Tue, 01 Jul 2025 22:07:45 +0700</pubDate>
+      <guid>https://blog.bestcyberbot.click/tags/volume/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
