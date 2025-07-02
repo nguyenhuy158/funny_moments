@@ -20,7 +20,7 @@ params:
   mainSections:
     - "posts"
   author: "me"
-  defaultTheme: "dark"
+  defaultTheme: "auto"
   keywords: [Blog, Portfolio, PaperMod]
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "02/01/06"
