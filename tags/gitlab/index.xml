@@ -4,8 +4,13 @@
     <title>Gitlab on Funny Moments</title>
     <link>http://localhost:1313/tags/gitlab/</link>
     <description>Recent content in Gitlab on Funny Moments</description>
+    <image>
+      <title>Funny Moments</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
     <generator>Hugo -- 0.147.3</generator>
-    <language>en</language>
+    <language>en-us</language>
     <lastBuildDate>Tue, 01 Jul 2025 22:09:21 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
     <item>

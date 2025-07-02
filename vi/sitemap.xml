@@ -2,40 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.hyit08.xyz/vi/categories/</loc>
+    <loc>http://localhost:1313/vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.hyit08.xyz/categories/"
+                href="http://localhost:1313/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://blog.hyit08.xyz/vi/categories/"
+                href="http://localhost:1313/vi/categories/"
                 />
   </url><url>
-    <loc>https://blog.hyit08.xyz/vi/</loc>
+    <loc>http://localhost:1313/vi/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.hyit08.xyz/"
+                href="http://localhost:1313/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://blog.hyit08.xyz/vi/"
+                href="http://localhost:1313/vi/"
                 />
   </url><url>
-    <loc>https://blog.hyit08.xyz/vi/tags/</loc>
+    <loc>http://localhost:1313/vi/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.hyit08.xyz/tags/"
+                href="http://localhost:1313/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://blog.hyit08.xyz/vi/tags/"
+                href="http://localhost:1313/vi/tags/"
                 />
   </url>
 </urlset>
