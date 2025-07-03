@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Json on Funny Moments</title>
+    <link>https://blog.bestcyberbot.click/tags/json/</link>
+    <description>Recent content in Json on Funny Moments</description>
+    <image>
+      <title>Funny Moments</title>
+      <url>https://blog.bestcyberbot.click/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.bestcyberbot.click/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.147.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Jul 2025 10:17:23 +0700</lastBuildDate>
+    <atom:link href="https://blog.bestcyberbot.click/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Handle Json Key Case</title>
+      <link>https://blog.bestcyberbot.click/posts/handle-json-key-case/</link>
+      <pubDate>Thu, 03 Jul 2025 10:17:23 +0700</pubDate>
+      <guid>https://blog.bestcyberbot.click/posts/handle-json-key-case/</guid>
+      <description>&lt;p&gt;Khi làm việc với dữ liệu JSON từ nhiều nguồn, chắc chắn bạn từng gặp cảnh key không đồng nhất như:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;tTien&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;ttien&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;tthue&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;tThue&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;TThue&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Mỗi nơi đặt tên mỗi kiểu, khó xử lý. Nếu cứ try/except, if/else hay match/case thì code sẽ loằng ngoằng và dễ lỗi.&lt;/p&gt;
+&lt;p&gt;Giải pháp gọn nhẹ
+Trước khi xử lý, convert hết key về lowercase. Cực nhanh và dễ maintain: &lt;code&gt;data = {k.lower(): v for k, v in original_data.items()}&lt;/code&gt; Giờ thì chỉ cần data[&amp;rsquo;ttien&amp;rsquo;], data[&amp;rsquo;tthue&amp;rsquo;] thôi, khỏi lo viết dài dòng.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

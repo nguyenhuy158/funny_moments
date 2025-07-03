@@ -11,8 +11,36 @@
     </image>
     <generator>Hugo -- 0.147.3</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jul 2025 22:09:21 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 03 Jul 2025 10:17:23 +0700</lastBuildDate>
     <atom:link href="https://blog.bestcyberbot.click/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data-Cleaning</title>
+      <link>https://blog.bestcyberbot.click/tags/data-cleaning/</link>
+      <pubDate>Thu, 03 Jul 2025 10:17:23 +0700</pubDate>
+      <guid>https://blog.bestcyberbot.click/tags/data-cleaning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Json</title>
+      <link>https://blog.bestcyberbot.click/tags/json/</link>
+      <pubDate>Thu, 03 Jul 2025 10:17:23 +0700</pubDate>
+      <guid>https://blog.bestcyberbot.click/tags/json/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://blog.bestcyberbot.click/tags/python/</link>
+      <pubDate>Thu, 03 Jul 2025 10:17:23 +0700</pubDate>
+      <guid>https://blog.bestcyberbot.click/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tips</title>
+      <link>https://blog.bestcyberbot.click/tags/tips/</link>
+      <pubDate>Thu, 03 Jul 2025 10:17:23 +0700</pubDate>
+      <guid>https://blog.bestcyberbot.click/tags/tips/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Git</title>
       <link>https://blog.bestcyberbot.click/tags/git/</link>
