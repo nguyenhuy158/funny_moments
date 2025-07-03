@@ -28,7 +28,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Mỗi nơi đặt tên mỗi kiểu, khó xử lý. Nếu cứ try/except, if/else hay match/case thì code sẽ loằng ngoằng và dễ lỗi.&lt;/p&gt;
 &lt;p&gt;Giải pháp gọn nhẹ
-Trước khi xử lý, convert hết key về lowercase. Cực nhanh và dễ maintain: &lt;code&gt;data = {k.lower(): v for k, v in original_data.items()}&lt;/code&gt; Giờ thì chỉ cần data[&amp;rsquo;ttien&amp;rsquo;], data[&amp;rsquo;tthue&amp;rsquo;] thôi, khỏi lo viết dài dòng.&lt;/p&gt;</description>
+Trước khi xử lý, convert hết key về lowercase. Cực nhanh và dễ maintain: &lt;code&gt;data = {k.lower(): v for k, v in original_data.items()}&lt;/code&gt; Giờ thì chỉ cần &lt;code&gt;data[&#39;ttien&#39;]&lt;/code&gt;, &lt;code&gt;data[&#39;tthue&#39;]&lt;/code&gt; thôi, khỏi lo viết dài dòng.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Special Characters</title>
