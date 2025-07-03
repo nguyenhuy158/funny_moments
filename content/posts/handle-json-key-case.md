@@ -26,7 +26,7 @@ Khi làm việc với dữ liệu JSON từ nhiều nguồn, chắc chắn bạn
 Mỗi nơi đặt tên mỗi kiểu, khó xử lý. Nếu cứ try/except, if/else hay match/case thì code sẽ loằng ngoằng và dễ lỗi.
 
 Giải pháp gọn nhẹ
-Trước khi xử lý, convert hết key về lowercase. Cực nhanh và dễ maintain: `data = {k.lower(): v for k, v in original_data.items()}` Giờ thì chỉ cần data['ttien'], data['tthue'] thôi, khỏi lo viết dài dòng.
+Trước khi xử lý, convert hết key về lowercase. Cực nhanh và dễ maintain: `data = {k.lower(): v for k, v in original_data.items()}` Giờ thì chỉ cần `data['ttien']`, `data['tthue']` thôi, khỏi lo viết dài dòng.
 
 Bonus
 Nếu key có dấu cách hoặc dấu gạch (-, _), có thể normalize thêm:
