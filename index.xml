@@ -11,8 +11,44 @@
     </image>
     <generator>Hugo -- 0.147.3</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Jul 2025 10:17:23 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 04 Jul 2025 11:05:43 +0700</lastBuildDate>
     <atom:link href="https://blog.bestcyberbot.click/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Convert Html to Markdown</title>
+      <link>https://blog.bestcyberbot.click/posts/convert-html-to-markdown/</link>
+      <pubDate>Fri, 04 Jul 2025 11:05:43 +0700</pubDate>
+      <guid>https://blog.bestcyberbot.click/posts/convert-html-to-markdown/</guid>
+      <description>&lt;p&gt;Trong một số tình huống như:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bạn đang lấy nội dung HTML từ email hoặc web&lt;/li&gt;
+&lt;li&gt;Muốn dán nó lên Slack cho gọn gàng&lt;/li&gt;
+&lt;li&gt;Hoặc muốn paste vô Hugo để viết blog mà không bị lỗi format&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thì Markdown là chuẩn nhất. Nhưng convert bằng tay thì mệt. Vậy thì&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;-giải-pháp-dùng-python-convert-html--markdown&#34;&gt;🛠 Giải pháp: Dùng Python convert HTML → Markdown&lt;/h2&gt;
+&lt;p&gt;Có 2 thư viện cực tiện:&lt;/p&gt;
+&lt;h3 id=&#34;1-html2text--dễ-xài-cài-1-phát-là-chiến&#34;&gt;1. &lt;code&gt;html2text&lt;/code&gt; — dễ xài, cài 1 phát là chiến&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install html2text
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;import html2text
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;html&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;b&amp;gt;Hello&amp;lt;/b&amp;gt; &amp;lt;a href=&amp;#39;https://example.com&amp;#39;&amp;gt;Click me&amp;lt;/a&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;markdown&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; html2text.html2text&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;html&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;markdown&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# **Hello** [Click me](https://example.com)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;markdownify — xịn hơn, tùy chỉnh mạnh&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install markdownify
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;from markdownify import markdownify as md
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;html&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;h1&amp;gt;Title&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;This is &amp;lt;b&amp;gt;bold&amp;lt;/b&amp;gt;&amp;lt;/p&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;markdown&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; md&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;html&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;print&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;markdown&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# # Title&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# This is **bold**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;✨ Tại sao nên dùng?
+Slack không hỗ trợ HTML ⇒ cần Markdown
+Hugo viết bài cũng dùng Markdown
+Làm việc nhanh hơn, đỡ sửa tay&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Handle Json Key Case</title>
       <link>https://blog.bestcyberbot.click/posts/handle-json-key-case/</link>
