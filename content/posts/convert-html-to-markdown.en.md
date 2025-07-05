@@ -11,19 +11,19 @@ externalLink = ''
 series = []
 +++
 
-Trong một số tình huống như:
+In some situations, such as:
 
-- Bạn đang lấy nội dung HTML từ email hoặc web
-- Muốn dán nó lên Slack cho gọn gàng
-- Hoặc muốn paste vô Hugo để viết blog mà không bị lỗi format
+- You are getting HTML content from email or the web
+- Want to paste it into Slack neatly
+- Or want to paste it into Hugo to write a blog without format errors
 
-Thì Markdown là chuẩn nhất. Nhưng convert bằng tay thì mệt. Vậy thì...
+Then Markdown is the best standard. But converting by hand is tiring. So...
 
-## 🛠 Giải pháp: Dùng Python convert HTML → Markdown
+## 🛠 Solution: Use Python to convert HTML → Markdown
 
-Có 2 thư viện cực tiện:
+There are 2 extremely convenient libraries:
 
-### 1. `html2text` — dễ xài, cài 1 phát là chiến
+### 1. `html2text` — easy to use, install and you're ready to go
 
 ```bash
 pip install html2text
@@ -33,7 +33,7 @@ markdown = html2text.html2text(html)
 print(markdown)
 # **Hello** [Click me](https://example.com)
 ```
-2. markdownify — xịn hơn, tùy chỉnh mạnh
+2. markdownify — more advanced, highly customizable
 ```bash
 pip install markdownify
 from markdownify import markdownify as md
@@ -44,10 +44,10 @@ print(markdown)
 # This is **bold**
 ```
 
-✨ Tại sao nên dùng?
-Slack không hỗ trợ HTML ⇒ cần Markdown
-Hugo viết bài cũng dùng Markdown
-Làm việc nhanh hơn, đỡ sửa tay
+✨ Why use it?
+Slack does not support HTML ⇒ Markdown is needed
+Hugo also uses Markdown to write articles
+Work faster, less manual editing
 
-## 🎯 Tip nhỏ
-Dùng strip() sau khi convert để loại bỏ dòng trống: `md = html2text.html2text(html).strip()`
+## 🎯 Small tip
+Use strip() after converting to remove blank lines: `md = html2text.html2text(html).strip()`
