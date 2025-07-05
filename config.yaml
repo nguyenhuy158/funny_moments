@@ -137,3 +137,13 @@ outputs:
 services:
   googleAnalytics:
     ID: G-RJV6SMGLFR
+
+HTTPCache:
+  polls:
+  - disable: true
+    for:
+      excludes: []
+      includes:
+      - '**'
+    high: 0s
+    low: 0s
