@@ -3,12 +3,12 @@ date = '2025-07-01T22:09:21+07:00'
 draft = false
 title = 'Tip Move Repo Gitlab Github'
 author = []
-summary = "How to move a repo from GitLab to GitHub (or vice versa) and keep all history, branches, and tags with just a few bash commands."
+summary = "Cách chuyển repo từ GitLab sang GitHub (hoặc ngược lại) mà giữ nguyên lịch sử, branch, tag chỉ với vài dòng lệnh bash."
 tags = ["git", "github", "gitlab", "mirror", "tip"]
 +++
 
 
-Want to move a repo from GitLab to GitHub and keep **all commits, branches, and tags**? Here's a super simple way 👇
+Bạn muốn chuyển repo từ GitLab sang GitHub mà giữ **toàn bộ commit, branch và tag**? Đây là cách siêu gọn 👇
 
 ```bash
 #!/bin/bash
@@ -27,3 +27,4 @@ git push --mirror
 
 # Done!
 echo "✅ Repo migrated from GitLab to GitHub!"
+```

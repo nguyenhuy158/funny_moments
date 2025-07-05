@@ -11,7 +11,7 @@ externalLink = ''
 series = []
 +++
 
-Khi làm việc với dữ liệu JSON từ nhiều nguồn, chắc chắn bạn từng gặp cảnh key không đồng nhất như:
+When working with JSON data from different sources, you might see inconsistent key names, like:
 
 ```json
 {
@@ -23,13 +23,13 @@ Khi làm việc với dữ liệu JSON từ nhiều nguồn, chắc chắn bạn
 }
 ```
 
-Mỗi nơi đặt tên mỗi kiểu, khó xử lý. Nếu cứ try/except, if/else hay match/case thì code sẽ loằng ngoằng và dễ lỗi.
+Different places use different names, which is annoying. Using try/except, if/else, or match/case makes the code messy and error-prone.
 
-Giải pháp gọn nhẹ
-Trước khi xử lý, convert hết key về lowercase. Cực nhanh và dễ maintain: `data = {k.lower(): v for k, v in original_data.items()}` Giờ thì chỉ cần `data['ttien']`, `data['tthue']` thôi, khỏi lo viết dài dòng.
+Simple solution:
+Before processing, convert all keys to lowercase. It's fast and easy to maintain: `data = {k.lower(): v for k, v in original_data.items()}` Now you can just use `data['ttien']`, `data['tthue']` without writing long code.
 
-Bonus
-Nếu key có dấu cách hoặc dấu gạch (-, _), có thể normalize thêm:
+Bonus:
+If keys have spaces or dashes (-, _), you can normalize further:
 ```python
 import re
 
@@ -37,4 +37,3 @@ def normalize_key(k):
     return re.sub(r'\W+', '', k).lower()
 
 data = {normalize_key(k): v for k, v in original_data.items()}
-```

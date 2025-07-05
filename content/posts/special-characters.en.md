@@ -13,20 +13,19 @@ fmContentType = "default"
 +++
 
 
-Khi viết blog, bạn có thể cần dùng các ký tự như `>`, `<`, `<=`, `>=`, `&`.
+When writing a blog, you might need to use characters like `>`, `<`, `<=`, `>=`, `&`.
 
-Để tránh lỗi hiển thị, hãy chuyển chúng như sau:
+## To avoid display errors, change them like this:
 
-- `>` → `&gt;`
-- `<` → `&lt;`
-- `<=` → `&lt;=`
-- `>=` → `&gt;=`
-- `&` → `&amp;`
+- `>` → `>`
+- `<` → `<`
+- `<=` → `<=`
+- `>=` → `>=`
+- `&` → `&`
 
-Ví dụ code hiển thị đúng:
+## For example, the code displays correctly:
 
 ```html
-if (a &lt;= b &amp;&amp; b &gt;= c) {
+if (a <= b && b >= c) {
   return true;
 }
-```
