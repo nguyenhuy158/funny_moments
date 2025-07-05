@@ -11,7 +11,8 @@ externalLink = ""
 series = [ ]
 +++
 
-Welcome everyone to my blog. I'm Huy, developer and want to become devops senior.
+Welcome to my blog!
+I'm Huy. I'm a developer, and I want to become a senior DevOps.
 
-Here blog is experient on journy become senior devops.
-Have a nice time.
+This blog shares my experience on the journey to becoming a senior DevOps.
+Hope you enjoy your time here!
