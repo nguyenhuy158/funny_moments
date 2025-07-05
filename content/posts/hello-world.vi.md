@@ -9,6 +9,7 @@ tags = [ "devops", "path", "backend" ]
 categories = [ "vlogs" ]
 externalLink = ""
 series = [ ]
+images = [ "/images/code.png" ]
 +++
 
 Chào mừng đến với blog của mình!

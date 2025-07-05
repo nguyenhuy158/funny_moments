@@ -9,7 +9,7 @@
         {
           "title": "date",
           "name": "date",
-          "type": "datetime"
+          "type": "string"
         },
         {
           "title": "draft",
@@ -50,6 +50,12 @@
         {
           "title": "series",
           "name": "series",
+          "type": "fields",
+          "fields": []
+        },
+        {
+          "title": "images",
+          "name": "images",
           "type": "fields",
           "fields": []
         }
