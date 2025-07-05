@@ -16,6 +16,10 @@ params:
   env: production
   title: "Funny Moments"
   headTitle: "Funny Moments"
+  subtitle: The Best Widgets on Earth
+  contact:
+    email: huy.ntq02@gmail.com
+    # phone: +08123456789
   description: "Blog cá nhân về tech và mấy thứ vui vui"
   mainSections:
     - "posts"
@@ -129,3 +133,7 @@ outputs:
     - "HTML"
     - "RSS"
     - "JSON"
+
+services:
+  googleAnalytics:
+    ID: G-RJV6SMGLFR
