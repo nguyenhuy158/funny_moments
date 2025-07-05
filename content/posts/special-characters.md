@@ -1,14 +1,15 @@
 +++
-date = '2025-07-02T16:53:20+07:00'
+date = "2025-07-02T16:53:20+07:00"
 draft = false
-title = 'Special Characters'
-description = ''
-slug = ''
-authors = []
-tags = []
-categories = []
-externalLink = ''
-series = []
+title = "Special Characters"
+description = ""
+slug = ""
+authors = [ ]
+tags = [ ]
+categories = [ ]
+externalLink = ""
+series = [ ]
+fmContentType = "default"
 +++
 
 

@@ -7,15 +7,14 @@
       "previewPath": null,
       "fields": [
         {
+          "title": "date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
           "title": "draft",
           "name": "draft",
           "type": "draft"
-        },
-        {
-          "title": "date",
-          "name": "date",
-          "type": "fields",
-          "fields": []
         },
         {
           "title": "title",
@@ -53,6 +52,64 @@
           "name": "series",
           "type": "fields",
           "fields": []
+        }
+      ]
+    },
+    {
+      "name": "post",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "authors",
+          "name": "authors",
+          "type": "fields",
+          "fields": []
+        },
+        {
+          "title": "tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "externalLink",
+          "name": "externalLink",
+          "type": "string"
+        },
+        {
+          "title": "series",
+          "name": "series",
+          "type": "fields",
+          "fields": []
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
         }
       ]
     }
