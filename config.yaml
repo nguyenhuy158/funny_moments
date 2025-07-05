@@ -48,7 +48,12 @@ params:
   disableCopyright: true
   hideFooter: true
 
+  showSearch: true
+
   assets:
+    disableHLJS: false
+    disableFingerprinting: false
+#   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
     favicon: "images/sea.png"
@@ -56,6 +61,16 @@ params:
     favicon32x32: "images/sea.png"
     apple_touch_icon: "images/sea.png"
     safari_pinned_tab: "images/sea.png"
+
+  # Use built-in Fuse.js search
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 100
+    threshold: 0.4
+    minMatchCharLength: 2
+    keys: ["title", "permalink", "summary", "content"]
 
   label:
     # text: "Home"
@@ -88,31 +103,35 @@ params:
 
   # for search
   # https://fusejs.io/api/options.html
-  fuseOpts:
-    isCaseSensitive: false
-    shouldSort: true
-    location: 0
-    distance: 1000
-    threshold: 0.4
-    minMatchCharLength: 0
-    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
-    keys: ["title", "permalink", "summary", "content"]
+#   fuseOpts:
+#     isCaseSensitive: false
+#     shouldSort: true
+#     location: 0
+#     distance: 1000
+#     threshold: 0.4
+#     minMatchCharLength: 0
+#     limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+#     keys: ["title", "permalink", "summary", "content"]
 
 
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
+    - name: Archive
+      url: archives
+      weight: 1
+    - name: Search
+      url: search/
+      weight: 2
+    # - identifier: ategories
+    #   name: Categories
+    #   url: /categories/
+    #   weight: 4
     - identifier: tags
-      name: tags
+      name: Tags
       url: /tags/
-      weight: 20
-    - identifier: trick
-      name: trick
-      url: /trick/
-      weight: 30
+      weight: 3
+    - name: Github
+      url: https://github.com/nguyenhuy158
 
 pygmentsUseClasses: true
 
@@ -130,9 +149,9 @@ pagination:
 
 outputs:
   home:
-    - "HTML"
-    - "RSS"
-    - "JSON"
+    - HTML
+    - RSS
+    - JSON
 
 services:
   googleAnalytics:
