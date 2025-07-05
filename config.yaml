@@ -12,6 +12,15 @@ minify:
   disableXML: true
   minifyOutput: true
 
+defaultContentLanguage: en
+languages:
+  en:
+    languageName: English
+    weight: 1
+  vi:
+    languageName: Tiếng Việt
+    weight: 2
+
 params:
   env: production
   title: "Funny Moments"
@@ -49,6 +58,7 @@ params:
   hideFooter: true
 
   showSearch: true
+  ShowLanguageSwitcher: true
 
   assets:
     disableHLJS: false
