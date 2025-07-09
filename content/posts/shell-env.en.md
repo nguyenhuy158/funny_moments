@@ -16,11 +16,11 @@ Use `/usr/bin/env` in Shell Scripts
 When writing shell scripts, avoid hardcoding the full path to the shell.
 Instead, use the environment path to make your script more portable across different systems.
 
-# ✅ Recommended:
+## ✅ Recommended:
 
 `#!/usr/bin/env bash`
 
-# 🚫 Not recommended:
+## 🚫 Not recommended:
 
 `#!/usr/bin/bash`
 
