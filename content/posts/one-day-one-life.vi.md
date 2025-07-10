@@ -15,3 +15,9 @@ images = [ ]
 ```
 Một ngày của bạn trôi qua như thế nào thì một đời bạn cũng sẽ trôi qua như thế đấy.
 ```
+
+---
+
+```
+Chúng ta hận đời rồi quay lại mắng người thân.
+```
