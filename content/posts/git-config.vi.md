@@ -7,7 +7,7 @@ slug = ""
 authors = [ ]
 tags = [ ]
 categories = [ ]
-externalLink = ""
+externalLink = [ "https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration" ]
 series = [ ]
 images = [ ]
 +++
