@@ -15,7 +15,13 @@ images = [ ]
 ## Global
 
 nơi lưu mặt định `~/.gitconfig`
+```bash
+git config --global key value
+```
 
 ## Local
 
 nơi lưu mặt định `.git/config`
+```bash
+git config --local key value
+```

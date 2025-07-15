@@ -16,6 +16,13 @@ images = [ ]
 
 location store is `~/.gitconfig`
 
+```bash
+git config --global key value
+```
+
 ## Local
 
 location store is `.git/config`
+```bash
+git config --local key value
+```
