@@ -4,12 +4,12 @@ draft = false
 title = 'Odoo Hide Column in Tree'
 description = ""
 slug = ""
-authors = [ ]
+authors = []
 tags = [ "odoo", "xml", "tree" ]
-categories = [ ]
+categories = []
 externalLink = ""
-series = [ ]
-images = [ ]
+series = []
+images = []
 +++
 
 ```xml
