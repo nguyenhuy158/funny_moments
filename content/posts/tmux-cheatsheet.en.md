@@ -9,11 +9,16 @@ tags = [ ]
 categories = [ ]
 externalLink = ""
 series = [ ]
-images = [ ]
+images = [ "/images/core-tmux.png" ]
 +++
+
+![Tmux Core Commands](/images/core-tmux.png)
+*Essential tmux commands and shortcuts for productivity. Power by AI*
 
 ## Check current prefix
 ```
 tmux show -gv prefix
 ```
+
+
 
