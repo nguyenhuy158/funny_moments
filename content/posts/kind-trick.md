@@ -16,6 +16,7 @@ images = [ ]
 
 - [k2pdfopt](https://www.willus.com/k2pdfopt/) : tool convert pdf to pdf (*crop margin, reflow, ..*).
 - [pdf2epub](https://github.com/overcuriousity/pdf2epub) : pdf to epub (using ai model).
+- [Translator](https://github.com/bookfere/Ebook-Translator-Calibre-Plugin) : tool translator ebook (plugin in calibre).
 
 ### k2pdfopt
 
