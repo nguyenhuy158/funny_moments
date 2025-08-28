@@ -13,3 +13,6 @@ images = [ ]
 +++
 
 gọi xuống từng bảng và lấy ra cái id chung sau đó and ( hay or ) lại rồi gọi xuống bảng chính hiển thị lên
+
+handle -> UI
+server -> Business logic
