@@ -1,4 +1,8 @@
-.PHONY: new post commit
+.PHONY: new post commit ci
+
+HUGO ?= $(shell command -v hugo 2>/dev/null || printf '%s' /opt/homebrew/bin/hugo)
+BASE_URL ?= $(shell if [ -f CNAME ]; then printf 'https://%s' "$$(tr -d '\n' < CNAME)"; else printf '/'; fi)
+HUGO_CACHE_DIR ?= $(CURDIR)/.hugo_cache
 
 # Create a new post
 new:
@@ -27,3 +31,16 @@ commit:
 	git add .
 	git commit -m "$(MSG)"
 	git push origin main
+
+# Run the same Hugo build check used by CI
+ci:
+	@if [ ! -x "$(HUGO)" ]; then \
+		echo "Hugo not found. Set HUGO=/path/to/hugo"; \
+		exit 1; \
+	fi
+	HUGO_CACHEDIR="$(HUGO_CACHE_DIR)" "$(HUGO)" \
+		--buildDrafts=false \
+		--buildFuture=false \
+		--gc \
+		--minify \
+		--baseURL "$(BASE_URL)"

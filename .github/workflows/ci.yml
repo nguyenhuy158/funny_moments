@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - "**"
+    tags-ignore:
+      - "v*"
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Hugo build check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.152.2"
+          extended: true
+
+      - name: Resolve production base URL
+        id: base-url
+        shell: bash
+        run: |
+          if [ -f CNAME ]; then
+            BASE_URL="https://$(tr -d '\n' < CNAME)"
+          else
+            BASE_URL="/"
+          fi
+
+          echo "value=${BASE_URL}" >> "${GITHUB_OUTPUT}"
+
+      - name: Build site
+        shell: bash
+        run: |
+          hugo \
+            --buildDrafts=false \
+            --buildFuture=false \
+            --gc \
+            --minify \
+            --baseURL "${{ steps.base-url.outputs.value }}"
