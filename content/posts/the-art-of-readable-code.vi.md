@@ -2,8 +2,8 @@
 date = "2025-08-29T17:28:03+07:00"
 draft = false
 title = 'The Art of Readable Code'
-description = ""
-slug = ""
+description = "Ghi chú tóm tắt từ The Art of Readable Code kèm ví dụ và ý chính dễ áp dụng."
+slug = "the-art-of-readable-code"
 authors = [ ]
 tags = [ ]
 categories = [ ]

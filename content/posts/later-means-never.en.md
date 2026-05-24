@@ -2,8 +2,8 @@
 date = "2025-07-29T11:40:56+07:00"
 draft = false
 title = 'Later Means Never'
-description = ""
-slug = ""
+description = "A reminder that postponing cleanup usually turns small messes into long-term maintenance debt."
+slug = "later-means-never"
 authors = [ ]
 tags = [ ]
 categories = [ ]

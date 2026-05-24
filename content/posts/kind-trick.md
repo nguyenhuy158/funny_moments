@@ -2,8 +2,8 @@
 date = "2025-08-28T16:57:25+07:00"
 draft = false
 title = 'Kind Trick'
-description = ""
-slug = ""
+description = "Small notes and commands for working more effectively with kind and related tooling."
+slug = "kind-trick"
 authors = [ ]
 tags = [ "app", "tools", "kindle" ]
 categories = [ ]
@@ -29,4 +29,3 @@ k2pdfopt -dev kpw -dpi 300 -mode fitwidth -as -ui- -o out.pdf input.pdf
 ```
 python main.py filename.pdf
 ```
-

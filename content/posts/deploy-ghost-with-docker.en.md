@@ -2,8 +2,8 @@
 draft = false
 date = 2025-07-01T21:59:31+07:00
 title = "Deploy Ghost With Docker"
-description = ""
-slug = ""
+description = "Minimal Docker Compose setup to run Ghost locally or on a small server."
+slug = "deploy-ghost-with-docker"
 authors = []
 tags = []
 categories = []
@@ -29,4 +29,3 @@ services:
       - ./ghost-data:/var/lib/ghost/content
 
 ```
-

@@ -2,8 +2,8 @@
 date = "2025-07-28T22:55:22+07:00"
 draft = false
 title = 'Jenkins Ssh Key Error'
-description = ""
-slug = ""
+description = "Fix Jenkins SSH host key errors by adding the remote host to known_hosts inside the container."
+slug = "jenkins-ssh-key-error"
 authors = [ ]
 tags = [ ]
 categories = [ ]

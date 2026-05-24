@@ -2,8 +2,8 @@
 date = "2025-07-22T08:53:02+07:00"
 draft = false
 title = 'Grep Before After'
-description = ""
-slug = ""
+description = "Ví dụ dùng các cờ context của grep để hiển thị thêm dòng trước và sau kết quả khớp."
+slug = "grep-before-after"
 authors = [ ]
 tags = [ ]
 categories = [ ]

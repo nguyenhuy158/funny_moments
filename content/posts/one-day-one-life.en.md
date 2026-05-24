@@ -2,8 +2,8 @@
 date = "2025-07-10T07:39:27+07:00"
 draft = false
 title = 'One Day One Life'
-description = ""
-slug = ""
+description = "Short reflection on how daily habits quietly shape the direction of an entire life."
+slug = "one-day-one-life"
 authors = [ ]
 tags = [ ]
 categories = [ ]

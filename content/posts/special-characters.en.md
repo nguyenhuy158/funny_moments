@@ -2,8 +2,8 @@
 date = "2025-07-02T16:53:20+07:00"
 draft = false
 title = "Special Characters"
-description = ""
-slug = ""
+description = "How to write special characters safely in Markdown without breaking your blog content."
+slug = "special-characters"
 authors = [ ]
 tags = [ ]
 categories = [ ]

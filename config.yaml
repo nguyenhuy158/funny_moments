@@ -23,19 +23,19 @@ languages:
 
 params:
   env: production
-  title: "Funny Moments"
-  headTitle: "Funny Moments"
-  subtitle: The Best Widgets on Earth
+  title: "Build, Break, Learn"
+  headTitle: "Build, Break, Learn"
+  subtitle: "Tech notes, experiments, and useful fixes."
   contact:
     email: huy.ntq02@gmail.com
     # phone: +08123456789
-  description: "Blog cá nhân về tech và mấy thứ vui vui"
+  description: "Personal blog about tech, tools, experiments, and practical fixes."
   mainSections:
     - "posts"
-  author: "me"
+  author: "Huy Nguyen"
   defaultTheme: "auto"
-  keywords: [Blog, Portfolio, PaperMod]
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  keywords: [Tech, Blog, Hugo, DevOps, Notes]
+  images: ["/images/sea.png"]
   DateFormat: "02/01/06"
 
   ShowReadingTime: true
@@ -87,19 +87,11 @@ params:
     icon: images/sea.png
     iconHeight: 35
 
-  analytics:
-    google:
-      SiteVerificationTag: "XYZabc"
-    bing:
-      SiteVerificationTag: "XYZabc"
-    yandex:
-      SiteVerificationTag: "XYZabc"
-
   homeInfoParams:
     ShowShareButtons: true
     ShareButtons: ["linkedin", "twitter"]
-    Title: "Hi there, I'm Huy \U0001F44B"
-    Content: "Blog cá nhân về tech và mấy thứ vui vui"
+    Title: "Hi, I'm Huy."
+    Content: "I write about tech, tools, experiments, and small useful tricks."
 
   socialIcons:
     - name: "Github"
@@ -109,7 +101,7 @@ params:
     - name: "Linkedin"
       url: "https://www.linkedin.com/in/nguyenhuy158"
     - name: "gitlab"
-      url: "http://gitlab.com/huy.ntq02"
+      url: "https://gitlab.com/huy.ntq02"
 
   # for search
   # https://fusejs.io/api/options.html

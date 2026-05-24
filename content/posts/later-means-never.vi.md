@@ -2,8 +2,8 @@
 date = "2025-07-29T11:40:54+07:00"
 draft = false
 title = 'Later Means Never'
-description = ""
-slug = ""
+description = "Nhắc lại rằng việc để dành dọn dẹp thường biến mớ lộn xộn nhỏ thành nợ bảo trì dài hạn."
+slug = "later-means-never"
 authors = [ ]
 tags = [ ]
 categories = [ ]

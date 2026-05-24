@@ -3,6 +3,8 @@ date = '2026-05-24T10:34:07+07:00'
 draft = false
 title = '2 Cleanup Tools for Node.js and Python'
 author = []
+description = "Two lightweight CLI tools to clean up old node_modules, Python virtual environments, and cache directories."
+slug = "npkill-killpy"
 summary = "Two small but useful CLIs: `npx npkill` to clean up `node_modules`, and `uvx killpy` to find and remove Python virtual environments and caches eating disk space."
 tags = ["nodejs", "python", "cli", "tool", "tip", "disk"]
 +++

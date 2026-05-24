@@ -3,6 +3,8 @@ date = '2025-07-01T22:09:21+07:00'
 draft = false
 title = 'Tip Move Repo Gitlab Github'
 author = []
+description = "Mirror a repository from GitLab to GitHub while preserving full commit history, branches, and tags."
+slug = "tip-move-repo-gitlab-github"
 summary = "How to move a repo from GitLab to GitHub (or vice versa) and keep all history, branches, and tags with just a few bash commands."
 tags = ["git", "github", "gitlab", "mirror", "tip"]
 +++

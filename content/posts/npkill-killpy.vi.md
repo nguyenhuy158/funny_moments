@@ -3,6 +3,8 @@ date = '2026-05-24T10:34:07+07:00'
 draft = false
 title = '2 Tool Dọn Rác Cho Node.js Và Python'
 author = []
+description = "Hai CLI gọn nhẹ để dọn node_modules cũ, virtual environment Python và các thư mục cache chiếm dung lượng."
+slug = "npkill-killpy"
 summary = "Hai CLI nhỏ nhưng hữu ích: `npx npkill` để dọn `node_modules`, và `uvx killpy` để tìm rồi xóa virtual environment, cache Python đang ngốn ổ đĩa."
 tags = ["nodejs", "python", "cli", "tool", "tip", "disk"]
 +++

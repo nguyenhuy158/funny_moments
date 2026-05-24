@@ -2,8 +2,8 @@
 date = "2025-07-13T00:40:37+07:00"
 draft = false
 title = 'Ventoy in Nixos'
-description = ""
-slug = ""
+description = "Notes on getting Ventoy working on NixOS 25 when the default setup runs into errors."
+slug = "ventoy-in-nixos"
 authors = [ ]
 tags = [ ]
 categories = [ ]

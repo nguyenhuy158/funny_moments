@@ -1,6 +1,6 @@
 ---
-title: "Archive"
+title: "Lưu trữ"
 layout: "archives"
 # url: "/archives"
-summary: "archives"
+summary: "Xem lại các bài viết và ghi chú cũ."
 ---

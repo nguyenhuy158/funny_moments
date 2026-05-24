@@ -2,8 +2,8 @@
 date = '2025-07-04T11:05:43+07:00'
 draft = false
 title = 'Convert Html to Markdown'
-description = ''
-slug = ''
+description = "Một vài cách chuyển nội dung HTML sang Markdown để dễ chỉnh sửa và đăng bài hơn."
+slug = "convert-html-to-markdown"
 authors = []
 tags = []
 categories = []

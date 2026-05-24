@@ -3,6 +3,8 @@ date = '2025-07-01T22:09:21+07:00'
 draft = false
 title = 'Tip Move Repo Gitlab Github'
 author = []
+description = "Cách mirror repo từ GitLab sang GitHub mà vẫn giữ nguyên lịch sử commit, branch và tag."
+slug = "tip-move-repo-gitlab-github"
 summary = "Cách chuyển repo từ GitLab sang GitHub (hoặc ngược lại) mà giữ nguyên lịch sử, branch, tag chỉ với vài dòng lệnh bash."
 tags = ["git", "github", "gitlab", "mirror", "tip"]
 +++

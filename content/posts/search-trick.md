@@ -2,8 +2,8 @@
 date = "2025-08-28T10:57:37+07:00"
 draft = false
 title = 'Search Trick'
-description = ""
-slug = ""
+description = "Quick note on combining IDs from related tables before querying the main table for search results."
+slug = "search-trick"
 authors = [ ]
 tags = [ ]
 categories = [ ]

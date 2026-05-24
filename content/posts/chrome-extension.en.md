@@ -2,8 +2,8 @@
 date = "2025-07-28T21:44:24+07:00"
 draft = false
 title = 'Chrome Extension'
-description = ""
-slug = ""
+description = "List of Chrome extensions and built-in components installed in the current browser profile."
+slug = "chrome-extension"
 authors = [ ]
 tags = [ ]
 categories = [ ]

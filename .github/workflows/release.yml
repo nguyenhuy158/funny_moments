@@ -84,6 +84,9 @@ jobs:
           hugo-version: "0.152.2"
           extended: true
 
+      - name: Lint content metadata
+        run: python3 scripts/lint_content.py
+
       - name: Build production site
         run: hugo --buildDrafts=false --buildFuture=false --minify
 

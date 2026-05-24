@@ -2,8 +2,8 @@
 date = "2025-07-15T15:59:19+07:00"
 draft = false
 title = 'Git Config'
-description = ""
-slug = ""
+description = "Quick notes on global and local Git configuration scopes and where they are stored."
+slug = "git-config"
 authors = [ ]
 tags = [ ]
 categories = [ ]

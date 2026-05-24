@@ -43,6 +43,10 @@ jobs:
 
           echo "value=${BASE_URL}" >> "${GITHUB_OUTPUT}"
 
+      - name: Lint content metadata
+        shell: bash
+        run: python3 scripts/lint_content.py
+
       - name: Build site
         shell: bash
         run: |

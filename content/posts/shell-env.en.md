@@ -2,8 +2,8 @@
 date = "2025-07-08T23:00:53+07:00"
 draft = false
 title = 'Shell Env'
-description = "Best practice when writing shell scripts"
-slug = ""
+description = "Why /usr/bin/env is a safer shebang choice for portable shell scripts across environments."
+slug = "shell-env"
 authors = []
 tags = []
 categories = []

@@ -2,8 +2,8 @@
 date = '2025-07-03T10:17:23+07:00'
 draft = false
 title = 'Handle Json Key Case'
-description = ''
-slug = ''
+description = "Normalize inconsistent JSON key casing before mapping data in your application."
+slug = "handle-json-key-case"
 authors = []
 tags = ["json", "python", "data-cleaning", "tips"]
 categories = []

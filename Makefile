@@ -1,4 +1,4 @@
-.PHONY: new post commit ci
+.PHONY: new post commit content-lint ci
 
 HUGO ?= $(shell command -v hugo 2>/dev/null || printf '%s' /opt/homebrew/bin/hugo)
 BASE_URL ?= $(shell if [ -f CNAME ]; then printf 'https://%s' "$$(tr -d '\n' < CNAME)"; else printf '/'; fi)
@@ -32,12 +32,17 @@ commit:
 	git commit -m "$(MSG)"
 	git push origin main
 
+# Validate content metadata and site placeholders
+content-lint:
+	python3 scripts/lint_content.py
+
 # Run the same Hugo build check used by CI
 ci:
 	@if [ ! -x "$(HUGO)" ]; then \
 		echo "Hugo not found. Set HUGO=/path/to/hugo"; \
 		exit 1; \
 	fi
+	$(MAKE) content-lint
 	HUGO_CACHEDIR="$(HUGO_CACHE_DIR)" "$(HUGO)" \
 		--buildDrafts=false \
 		--buildFuture=false \
