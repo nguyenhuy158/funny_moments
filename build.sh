@@ -16,6 +16,11 @@ main() {
 
   export TZ=Europe/Oslo
 
+  BASE_URL="${HUGO_BASE_URL:-}"
+  if [ -z "${BASE_URL}" ] && [ -f CNAME ]; then
+    BASE_URL="https://$(tr -d '\n' < CNAME)"
+  fi
+
   # Install Dart Sass
   echo "Installing Dart Sass ${DART_SASS_VERSION}..."
   curl -sLJO "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
@@ -61,7 +66,12 @@ main() {
 
   # Build the site
   echo "Building the site..."
-  hugo --gc --minify
+  if [ -n "${BASE_URL}" ]; then
+    echo "Using base URL: ${BASE_URL}"
+    hugo --gc --minify --baseURL "${BASE_URL}"
+  else
+    hugo --gc --minify
+  fi
 
 }
 
