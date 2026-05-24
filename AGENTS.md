@@ -23,6 +23,8 @@
 - **Content creation**: Follow Hugo archetypes in `archetypes/default.md`
 - **Git workflow**: Feature branches with PR reviews
 - **Deployment**: Automated via Jenkins/GitHub Pages on main branch
+- **Release CI**: GitHub Actions release workflow runs on version tags and creates GitHub Releases
+- **Release tag naming**: `vMAJOR.MINOR.PATCH` for stable releases, `vMAJOR.MINOR.PATCH-suffix` for pre-releases such as `v1.2.3-rc.1`
 
 ## File Structure
 - `content/posts/`: Blog posts with frontmatter
