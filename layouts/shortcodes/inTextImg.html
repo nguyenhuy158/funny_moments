@@ -1,0 +1,10 @@
+{{- partial "image.html" (dict
+  "page" .Page
+  "src" (.Get "url")
+  "alt" (.Get "alt")
+  "class" "in-text"
+  "height" ((.Get "height") | default "15")
+  "loading" "lazy"
+  "decoding" "async"
+  "sizes" "auto"
+) -}}

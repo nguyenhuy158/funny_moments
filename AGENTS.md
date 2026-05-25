@@ -18,6 +18,7 @@
 - **Frontmatter fields for pages**: title, description, summary
 - **Naming**: Kebab-case for slugs and filenames (e.g., `hello-world.en.md`)
 - **Language support**: All posts must be bilingual. Use `.en.md` and `.vi.md` pairs. Do not create single-language post files such as `post-name.md`.
+- **Images**: Put post images in page bundles or `assets/` when possible. Images only kept in `static/` can lazy load, but Hugo cannot auto-resize or convert them to WebP.
 - **Imports**: No code imports - pure content site
 - **Error handling**: Hugo build errors indicate syntax issues
 
@@ -33,7 +34,7 @@
 ## File Structure
 - `content/posts/`: Blog posts with frontmatter
 - `themes/papermod/`: Hugo theme (submodule)
+- `assets/`: Processed images and other Hugo resources
 - `static/`: Static assets (images, etc.)
 - `layouts/`: Custom Hugo templates
-- `.specify/`: Development workflow tools</content>
-<parameter name="filePath">AGENTS.md
+- `.specify/`: Development workflow tools

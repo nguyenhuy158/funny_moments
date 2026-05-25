@@ -1,0 +1,106 @@
+{{- $page := .page -}}
+{{- $src := .src -}}
+{{- $alt := .alt | default "" -}}
+{{- $title := .title -}}
+{{- $class := .class -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- $decoding := .decoding | default "async" -}}
+{{- $sizes := .sizes | default "(min-width: 900px) 720px, 100vw" -}}
+{{- $attributes := .attributes | default dict -}}
+{{- $width := .width -}}
+{{- $height := .height -}}
+{{- $link := .link -}}
+
+{{- $u := urls.Parse $src -}}
+{{- $path := strings.TrimPrefix "/" (strings.TrimPrefix "./" $u.Path) -}}
+{{- $resource := false -}}
+{{- $processableFormats := slice "jpg" "jpeg" "png" "tif" "tiff" "bmp" "gif" "webp" -}}
+
+{{- if and (not $u.IsAbs) $page -}}
+  {{- with $page.Resources.Get $path -}}
+    {{- $resource = . -}}
+  {{- else -}}
+    {{- with resources.Get $path -}}
+      {{- $resource = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $imgSrc := $src -}}
+{{- if and $resource (not $u.IsAbs) -}}
+  {{- $imgSrc = $resource.RelPermalink -}}
+{{- end -}}
+
+{{- $baseAttributes := dict
+  "alt" $alt
+  "decoding" $decoding
+  "loading" $loading
+  "src" $imgSrc
+  "title" ($title | transform.HTMLEscape)
+-}}
+{{- if $class -}}
+  {{- $baseAttributes = merge $baseAttributes (dict "class" $class) -}}
+{{- end -}}
+{{- if $width -}}
+  {{- $baseAttributes = merge $baseAttributes (dict "width" $width) -}}
+{{- end -}}
+{{- if $height -}}
+  {{- $baseAttributes = merge $baseAttributes (dict "height" $height) -}}
+{{- end -}}
+{{- $imgAttributes := merge $attributes $baseAttributes -}}
+
+{{- if and $resource (in $processableFormats $resource.MediaType.SubType) -}}
+  {{- $breakpoints := slice 480 720 1080 1440 -}}
+  {{- $defaultWidth := 720 -}}
+  {{- if lt $resource.Width $defaultWidth -}}
+    {{- $defaultWidth = $resource.Width -}}
+  {{- end -}}
+  {{- $display := $resource.Resize (printf "%dx" $defaultWidth) -}}
+  {{- $fallbackSrcset := slice -}}
+  {{- $webpSrcset := slice -}}
+
+  {{- range $bp := $breakpoints -}}
+    {{- if ge $resource.Width $bp -}}
+      {{- $fallbackVariant := $resource.Resize (printf "%dx" $bp) -}}
+      {{- $fallbackSrcset = $fallbackSrcset | append (printf "%s %dw" $fallbackVariant.RelPermalink $bp) -}}
+      {{- $webpVariant := $resource.Resize (printf "%dx webp q85" $bp) -}}
+      {{- $webpSrcset = $webpSrcset | append (printf "%s %dw" $webpVariant.RelPermalink $bp) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $fullWebp := $resource.Resize (printf "%dx webp q85" $resource.Width) -}}
+  {{- $fullFallback := $resource.RelPermalink -}}
+  {{- $webpSrcset = $webpSrcset | append (printf "%s %dw" $fullWebp.RelPermalink $resource.Width) -}}
+  {{- $fallbackSrcset = $fallbackSrcset | append (printf "%s %dw" $fullFallback $resource.Width) -}}
+  {{- $imgAttributes = merge $imgAttributes (dict
+    "src" $display.RelPermalink
+    "width" (printf "%d" $display.Width)
+    "height" (printf "%d" $display.Height)
+    "srcset" (delimit $fallbackSrcset ", ")
+    "sizes" $sizes
+  ) -}}
+
+  {{- if $link -}}<a href="{{ $link }}">{{- end -}}
+  <picture>
+    <source
+      srcset="{{ delimit $webpSrcset ", " }}"
+      sizes="{{ $sizes }}"
+      type="image/webp">
+    <img
+      {{- range $k, $v := $imgAttributes -}}
+        {{- if $v -}}
+          {{- printf " %s=%q" $k (printf "%v" $v) | safeHTMLAttr -}}
+        {{- end -}}
+      {{- end -}}>
+  </picture>
+  {{- if $link -}}</a>{{- end -}}
+{{- else -}}
+  {{- if $link -}}<a href="{{ $link }}">{{- end -}}
+  <img
+    {{- range $k, $v := $imgAttributes -}}
+      {{- if $v -}}
+        {{- printf " %s=%q" $k (printf "%v" $v) | safeHTMLAttr -}}
+      {{- end -}}
+    {{- end -}}>
+  {{- if $link -}}</a>{{- end -}}
+{{- end -}}
