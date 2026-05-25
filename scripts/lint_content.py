@@ -99,6 +99,7 @@ def validate_image_path(path: Path, image_path: str, errors: list[str]) -> None:
 
 def validate_posts(errors: list[str]) -> None:
     seen_slugs: dict[tuple[str, str], Path] = {}
+    post_variants: dict[str, set[str]] = {}
 
     for path in sorted(POSTS_DIR.glob("*.md")):
         try:
@@ -132,6 +133,23 @@ def validate_posts(errors: list[str]) -> None:
         image = frontmatter.get("image", "").strip()
         if image:
             validate_image_path(path, image, errors)
+
+        language = infer_language(path)
+        if language == "default":
+            errors.append(
+                f"{path.relative_to(ROOT)}: post files must use `.en.md` or `.vi.md`, plain `.md` is not allowed"
+            )
+            continue
+
+        base_name = path.name.rsplit(f".{language}.md", 1)[0]
+        post_variants.setdefault(base_name, set()).add(language)
+
+    for base_name, languages in sorted(post_variants.items()):
+        if languages != {"en", "vi"}:
+            missing = sorted({"en", "vi"} - languages)
+            errors.append(
+                f"content/posts/{base_name}: missing translation variant(s): {', '.join(missing)}"
+            )
 
 
 def validate_pages(errors: list[str]) -> None:
