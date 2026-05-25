@@ -1,0 +1,60 @@
+<script>
+  (() => {
+    const searchUrl = {{ "search/" | absLangURL }};
+    const isSearchPage = {{ if eq .Layout "search" }}true{{ else }}false{{ end }};
+
+    const isEditableTarget = (target) => {
+      if (!(target instanceof HTMLElement)) {
+        return false;
+      }
+
+      return target.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName);
+    };
+
+    const focusSearchInput = () => {
+      const searchInput = document.getElementById("searchInput");
+      if (!searchInput) {
+        return false;
+      }
+
+      searchInput.focus();
+      searchInput.select();
+      return true;
+    };
+
+    document.addEventListener("keydown", (event) => {
+      if (!(event.metaKey || event.ctrlKey) || event.key.toLowerCase() !== "k") {
+        return;
+      }
+
+      if (isEditableTarget(event.target)) {
+        return;
+      }
+
+      event.preventDefault();
+
+      if (isSearchPage && focusSearchInput()) {
+        return;
+      }
+
+      const selectedText = window.getSelection?.()?.toString().trim();
+      const targetUrl = selectedText ? `${searchUrl}?q=${encodeURIComponent(selectedText)}` : searchUrl;
+      window.location.href = targetUrl;
+    });
+
+    if (isSearchPage) {
+      window.addEventListener("load", () => {
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get("q");
+        const searchInput = document.getElementById("searchInput");
+
+        if (!query || !searchInput) {
+          return;
+        }
+
+        searchInput.value = query;
+        searchInput.dispatchEvent(new Event("input", { bubbles: true }));
+      });
+    }
+  })();
+</script>
