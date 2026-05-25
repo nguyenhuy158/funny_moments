@@ -69,7 +69,7 @@ main() {
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     git config core.quotepath false
     if [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
-      git fetch --unshallow
+      git -c fetch.recurseSubmodules=false fetch --unshallow
     fi
   else
     echo "Skipping Git configuration because the build context is not a Git worktree."
