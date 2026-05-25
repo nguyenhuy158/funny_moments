@@ -53,7 +53,10 @@ def collect_html_links(root: Path) -> tuple[list[str], dict[Path, list[str]]]:
         parser = LinkParser()
         if not html_path.exists():
             continue
-        parser.feed(html_path.read_text(encoding="utf-8"))
+        try:
+            parser.feed(html_path.read_text(encoding="utf-8"))
+        except FileNotFoundError:
+            continue
         source_url = html_path_to_url_path(root, html_path)
 
         for raw_link in parser.links:
