@@ -2,6 +2,18 @@
   (() => {
     const searchUrl = {{ "search/" | absLangURL }};
     const isSearchPage = {{ if eq .Layout "search" }}true{{ else }}false{{ end }};
+    const analyticsContext = {
+      lang: {{ .Lang }},
+      kind: {{ .Kind }},
+      layout: {{ .Layout }},
+      section: {{ .Section }},
+      title: {{ .Title }},
+      path: {{ .RelPermalink }}
+    };
+
+    const trackEvent = (name, payload = {}) => {
+      window.gtag?.("event", name, payload);
+    };
 
     const isEditableTarget = (target) => {
       if (!(target instanceof HTMLElement)) {
@@ -56,5 +68,129 @@
         searchInput.dispatchEvent(new Event("input", { bubbles: true }));
       });
     }
+
+    window.addEventListener("load", () => {
+      trackEvent("content_view", analyticsContext);
+    }, { once: true });
+
+    document.addEventListener("search:rendered", (event) => {
+      const detail = event.detail || {};
+      if (!detail.query) {
+        return;
+      }
+
+      trackEvent("search_query", {
+        query: detail.query,
+        result_count: detail.count ?? 0,
+        lang: analyticsContext.lang,
+        page_path: analyticsContext.path
+      });
+
+      if ((detail.count ?? 0) === 0) {
+        trackEvent("search_no_results", {
+          query: detail.query,
+          lang: analyticsContext.lang,
+          page_path: analyticsContext.path
+        });
+      }
+    });
+
+    document.addEventListener("search:result-click", (event) => {
+      const detail = event.detail || {};
+      trackEvent("search_result_click", {
+        query: detail.query || "",
+        result_url: detail.href || "",
+        result_title: detail.title || "",
+        lang: analyticsContext.lang
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      const link = event.target.closest("a[href]");
+      if (!link) {
+        return;
+      }
+
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("#") || href.startsWith("mailto:")) {
+        return;
+      }
+
+      const isExternal = /^https?:\/\//i.test(href) && !href.includes(window.location.hostname);
+      if (!isExternal) {
+        return;
+      }
+
+      trackEvent("outbound_click", {
+        link_url: href,
+        link_text: link.textContent.trim().slice(0, 120),
+        page_path: analyticsContext.path,
+        lang: analyticsContext.lang
+      });
+    });
+
+    const initLightbox = () => {
+      const contentImages = Array.from(document.querySelectorAll(".post-content img:not(.in-text)"));
+      if (!contentImages.length) {
+        return;
+      }
+
+      const overlay = document.createElement("div");
+      overlay.className = "image-lightbox";
+      overlay.innerHTML = `
+        <button class="image-lightbox__button" type="button" aria-label="Close image preview">Close</button>
+        <figure class="image-lightbox__figure">
+          <img class="image-lightbox__image" alt="">
+          <figcaption class="image-lightbox__caption"></figcaption>
+        </figure>
+      `;
+      document.body.appendChild(overlay);
+
+      const overlayImage = overlay.querySelector(".image-lightbox__image");
+      const overlayCaption = overlay.querySelector(".image-lightbox__caption");
+      const closeButton = overlay.querySelector(".image-lightbox__button");
+
+      const closeLightbox = () => {
+        overlay.classList.remove("is-open");
+        document.body.style.overflow = "";
+      };
+
+      const openLightbox = (img) => {
+        overlayImage.src = img.currentSrc || img.src;
+        overlayImage.alt = img.alt || "";
+        overlayCaption.textContent = img.title || img.alt || "";
+        overlay.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+        trackEvent("lightbox_open", {
+          image_src: overlayImage.src,
+          image_alt: overlayImage.alt,
+          page_path: analyticsContext.path,
+          lang: analyticsContext.lang
+        });
+      };
+
+      contentImages.forEach((img) => {
+        if ((img.naturalWidth && img.naturalWidth < 320) || (img.clientWidth && img.clientWidth < 140)) {
+          img.style.cursor = "default";
+          return;
+        }
+
+        img.addEventListener("click", () => openLightbox(img));
+      });
+
+      overlay.addEventListener("click", (event) => {
+        if (event.target === overlay || event.target === closeButton) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && overlay.classList.contains("is-open")) {
+          closeLightbox();
+        }
+      });
+    };
+
+    window.addEventListener("load", initLightbox, { once: true });
   })();
 </script>

@@ -20,16 +20,22 @@ class SmokeCase:
 SMOKE_CASES = [
     SmokeCase("/", 200, "Build, Break, Learn"),
     SmokeCase("/search/", 200, "Search"),
+    SmokeCase("/notes/", 200, "Notes"),
+    SmokeCase("/feeds/", 200, "Feeds"),
     SmokeCase("/tags/", 200, "Tags"),
     SmokeCase("/categories/", 200, "Categories"),
     SmokeCase("/archives/", 200, "Archive"),
     SmokeCase("/vi/", 200, "Build, Break, Learn"),
     SmokeCase("/vi/search/", 200, "Tìm kiếm"),
+    SmokeCase("/vi/notes/", 200, "Ghi chú"),
+    SmokeCase("/vi/feeds/", 200, "Nguồn cấp"),
     SmokeCase("/vi/tags/", 200, "Thẻ"),
     SmokeCase("/vi/categories/", 200, "Chuyên mục"),
     SmokeCase("/vi/archives/", 200, "Lưu trữ"),
     SmokeCase("/index.xml", 200, "<rss"),
     SmokeCase("/vi/index.xml", 200, "<rss"),
+    SmokeCase("/sitemap.xml", 200, "<sitemap"),
+    SmokeCase("/vi/sitemap.xml", 200, "<urlset"),
     SmokeCase("/this-path-should-not-exist-12345", 404, "404"),
 ]
 

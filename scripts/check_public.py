@@ -14,6 +14,8 @@ REQUIRED_PATHS = [
     "about/index.html",
     "now/index.html",
     "uses/index.html",
+    "notes/index.html",
+    "feeds/index.html",
     "search/index.html",
     "tags/index.html",
     "categories/index.html",
@@ -22,6 +24,8 @@ REQUIRED_PATHS = [
     "vi/about/index.html",
     "vi/now/index.html",
     "vi/uses/index.html",
+    "vi/notes/index.html",
+    "vi/feeds/index.html",
     "vi/search/index.html",
     "vi/tags/index.html",
     "vi/categories/index.html",
@@ -114,14 +118,50 @@ def main() -> int:
     )
     check_html_contains(
         public_dir,
+        "notes/index.html",
+        ["Notes", "short-form notes"],
+        errors,
+    )
+    check_html_contains(
+        public_dir,
+        "feeds/index.html",
+        ["Feeds", "Main RSS feed", "Sitemap"],
+        errors,
+    )
+    check_html_contains(
+        public_dir,
         "search/index.html",
-        ["Search", "assets/js/search."],
+        ["Search", "assets/js/search.", "searchStatus", "search-result-snippet"],
         errors,
     )
     check_html_contains(
         public_dir,
         "vi/search/index.html",
-        ["Tìm kiếm", "assets/js/search."],
+        ["Tìm kiếm", "assets/js/search.", "searchStatus", "search-result-snippet"],
+        errors,
+    )
+    check_html_contains(
+        public_dir,
+        "posts/tmux-cheatsheet/index.html",
+        ["image/webp", "post-freshness", "lightbox_open"],
+        errors,
+    )
+    check_html_contains(
+        public_dir,
+        "vi/notes/index.html",
+        ["Ghi chú", "TIL"],
+        errors,
+    )
+    check_html_contains(
+        public_dir,
+        "vi/feeds/index.html",
+        ["Nguồn cấp", "RSS chính", "Sitemap"],
+        errors,
+    )
+    check_html_contains(
+        public_dir,
+        "index.html",
+        ["/notes/", "/feeds/", "/sitemap.xml"],
         errors,
     )
 

@@ -34,6 +34,7 @@ params:
   description: "Personal blog about tech, tools, experiments, and practical fixes."
   mainSections:
     - "posts"
+    - "notes"
   author: "Huy Nguyen"
   defaultTheme: "auto"
   keywords: [Tech, Blog, Hugo, DevOps, Notes]
@@ -57,7 +58,7 @@ params:
   tocopen: false
 
   disableCopyright: true
-  hideFooter: true
+  hideFooter: false
 
   showSearch: true
   ShowLanguageSwitcher: true

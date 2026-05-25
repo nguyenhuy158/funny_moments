@@ -1,0 +1,38 @@
+{{- if eq .Kind "page" -}}
+{{- $isVi := eq .Lang "vi" -}}
+{{- $lastmod := .Lastmod -}}
+{{- if $lastmod.IsZero -}}
+  {{- $lastmod = .Date -}}
+{{- end -}}
+{{- if not $lastmod.IsZero -}}
+  {{- $staleDays := 540 -}}
+  {{- $ageDays := div (sub now.Unix $lastmod.Unix) 86400 -}}
+  {{- $isUpdated := and (not .Date.IsZero) (gt (sub $lastmod.Unix .Date.Unix) 86400) -}}
+  <div class="post-freshness{{ if ge $ageDays $staleDays }} is-stale{{ end }}">
+    <p class="post-freshness-meta">
+      {{- if $isUpdated -}}
+        {{- if $isVi -}}
+          Cập nhật lần cuối vào <strong>{{ $lastmod | time.Format (default ":date_long" site.Params.DateFormat) }}</strong>.
+        {{- else -}}
+          Last updated on <strong>{{ $lastmod | time.Format (default ":date_long" site.Params.DateFormat) }}</strong>.
+        {{- end -}}
+      {{- else -}}
+        {{- if $isVi -}}
+          Xuất bản vào <strong>{{ $lastmod | time.Format (default ":date_long" site.Params.DateFormat) }}</strong>.
+        {{- else -}}
+          Published on <strong>{{ $lastmod | time.Format (default ":date_long" site.Params.DateFormat) }}</strong>.
+        {{- end -}}
+      {{- end -}}
+    </p>
+    {{- if ge $ageDays $staleDays -}}
+      <p class="post-freshness-warning">
+        {{- if $isVi -}}
+          Bài này đã hơn {{ $ageDays }} ngày tuổi. Hãy kiểm tra lại phiên bản tool, lệnh, và link trước khi áp dụng.
+        {{- else -}}
+          This post is over {{ $ageDays }} days old. Re-check tool versions, commands, and external links before applying it.
+        {{- end -}}
+      </p>
+    {{- end -}}
+  </div>
+{{- end -}}
+{{- end -}}
