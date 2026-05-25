@@ -16,9 +16,11 @@ defaultContentLanguage: en
 languages:
   en:
     languageName: English
+    languageCode: en-US
     weight: 1
   vi:
     languageName: Tiếng Việt
+    languageCode: vi-VN
     weight: 2
 
 params:
@@ -103,6 +105,14 @@ params:
     - name: "gitlab"
       url: "https://gitlab.com/huy.ntq02"
 
+  schema:
+    publisherType: Person
+    sameAs:
+      - "https://github.com/nguyenhuy158"
+      - "https://youtube.com/@ntqhuy2k2"
+      - "https://www.linkedin.com/in/nguyenhuy158"
+      - "https://gitlab.com/huy.ntq02"
+
   # for search
   # https://fusejs.io/api/options.html
 #   fuseOpts:
@@ -124,14 +134,14 @@ menu:
     - name: Search
       url: search/
       weight: 2
-    # - identifier: ategories
-    #   name: Categories
-    #   url: /categories/
-    #   weight: 4
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 3
     - identifier: tags
       name: Tags
       url: /tags/
-      weight: 3
+      weight: 4
     - name: Github
       url: https://github.com/nguyenhuy158
 

@@ -24,6 +24,7 @@ PLACEHOLDERS = {
     "<link or path of image for opengraph, twitter-cards>": "Open Graph image placeholder",
     "XYZabc": "site verification placeholder",
     "Search demo site with full text fuzzy search ...": "search placeholder text",
+    "Discover insights and updates in my first blog post. Join me on this exciting journey of sharing thoughts and experiences!": "generic placeholder description",
 }
 
 
@@ -38,10 +39,44 @@ def load_toml_frontmatter(path: Path) -> dict[str, str]:
         match = re.search(rf"^{key}\s*=\s*(['\"])(.*?)\1\s*$", frontmatter, re.MULTILINE)
         if match:
             data[key] = match.group(2)
+    images_match = re.search(r"^images\s*=\s*\[(.*?)\]\s*$", frontmatter, re.MULTILINE | re.DOTALL)
+    if images_match:
+        image_values = [match[1] for match in re.findall(r"(['\"])(.*?)\1", images_match.group(1), re.DOTALL)]
+        data["images"] = ",".join(image_values)
+    cover_match = re.search(r"^image\s*=\s*(['\"])(.*?)\1\s*$", frontmatter, re.MULTILINE)
+    if cover_match:
+        data["image"] = cover_match.group(2)
     return data
 
 
+def infer_language(path: Path) -> str:
+    name = path.name
+    if name.endswith(".en.md"):
+        return "en"
+    if name.endswith(".vi.md"):
+        return "vi"
+    return "default"
+
+
+def validate_image_path(path: Path, image_path: str, errors: list[str]) -> None:
+    if not image_path or "://" in image_path or image_path.startswith("data:"):
+        return
+
+    normalized = image_path.strip()
+    if normalized.startswith("/"):
+        candidate = ROOT / "static" / normalized.lstrip("/")
+    else:
+        candidate = path.parent / normalized
+
+    if not candidate.exists():
+        errors.append(
+            f"{path.relative_to(ROOT)}: references missing image `{image_path}`"
+        )
+
+
 def validate_posts(errors: list[str]) -> None:
+    seen_slugs: dict[tuple[str, str], Path] = {}
+
     for path in sorted(POSTS_DIR.glob("*.md")):
         try:
             frontmatter = load_toml_frontmatter(path)
@@ -53,6 +88,27 @@ def validate_posts(errors: list[str]) -> None:
             value = frontmatter.get(key)
             if not isinstance(value, str) or not value.strip():
                 errors.append(f"{path.relative_to(ROOT)}: missing or empty `{key}`")
+
+        slug = frontmatter.get("slug", "").strip()
+        if slug:
+            language = infer_language(path)
+            slug_key = (language, slug)
+            previous = seen_slugs.get(slug_key)
+            if previous is not None:
+                errors.append(
+                    f"{path.relative_to(ROOT)}: duplicate slug `{slug}` for language `{language}`; already used by {previous.relative_to(ROOT)}"
+                )
+            else:
+                seen_slugs[slug_key] = path
+
+        images = frontmatter.get("images", "")
+        if images:
+            for image_path in [item.strip() for item in images.split(",") if item.strip()]:
+                validate_image_path(path, image_path, errors)
+
+        image = frontmatter.get("image", "").strip()
+        if image:
+            validate_image_path(path, image, errors)
 
 
 def validate_placeholders(errors: list[str]) -> None:

@@ -1,0 +1,24 @@
+{{- range site.Params.socialIcons }}
+<link rel="me" href="{{ .url }}">
+{{- end }}
+
+{{- if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.Title }},
+  "url": {{ .Permalink }},
+  "description": {{ site.Params.description | plainify }},
+  "inLanguage": [
+    "en-US",
+    "vi-VN"
+  ],
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {{ printf "%ssearch/?q={search_term_string}" .Permalink }},
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{{- end }}

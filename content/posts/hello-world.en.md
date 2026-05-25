@@ -2,7 +2,7 @@
 draft = false
 date = 2025-07-01T14:31:41.000Z
 title = "Huy's Path to Becoming a Senior DevOps"
-description = "Discover insights and updates in my first blog post. Join me on this exciting journey of sharing thoughts and experiences!"
+description = "An introduction to the blog and the path I am taking toward becoming a stronger DevOps engineer."
 slug = "huy-path-senior-devops"
 authors = [ ]
 tags = [ "devops", "path", "backend" ]
