@@ -3,6 +3,7 @@ date = "2025-08-28T16:57:25+07:00"
 draft = false
 title = 'Kind Trick'
 description = "Small notes and commands for working more effectively with kind and related tooling."
+summary = "Small notes and commands for working more effectively with kind and related tooling."
 slug = "kind-trick"
 authors = [ ]
 tags = [ "app", "tools", "kindle" ]

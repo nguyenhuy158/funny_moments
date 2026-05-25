@@ -3,6 +3,7 @@ draft = false
 date = 2025-07-01T21:59:31+07:00
 title = "Deploy Ghost With Docker"
 description = "Minimal Docker Compose setup to run Ghost locally or on a small server."
+summary = "Minimal Docker Compose setup to run Ghost locally or on a small server."
 slug = "deploy-ghost-with-docker"
 authors = []
 tags = []

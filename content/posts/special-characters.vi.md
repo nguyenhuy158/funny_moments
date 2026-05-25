@@ -3,6 +3,7 @@ date = "2025-07-02T16:53:20+07:00"
 draft = false
 title = "Special Characters"
 description = "Cách viết các ký tự đặc biệt trong Markdown mà không làm hỏng nội dung bài blog."
+summary = "Cách viết các ký tự đặc biệt trong Markdown mà không làm hỏng nội dung bài blog."
 slug = "special-characters"
 authors = [ ]
 tags = [ ]

@@ -3,6 +3,7 @@ date = '2025-07-04T11:05:43+07:00'
 draft = false
 title = 'Convert Html to Markdown'
 description = "Simple ways to convert HTML content into Markdown for easier editing and publishing."
+summary = "Simple ways to convert HTML content into Markdown for easier editing and publishing."
 slug = "convert-html-to-markdown"
 authors = []
 tags = []

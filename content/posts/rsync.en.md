@@ -3,6 +3,7 @@ date = "2025-07-15T11:01:19+07:00"
 draft = false
 title = 'Rsync'
 description = "Useful rsync commands as a safer and more flexible alternative to plain cp."
+summary = "Useful rsync commands as a safer and more flexible alternative to plain cp."
 slug = "rsync"
 authors = [ ]
 tags = [ ]

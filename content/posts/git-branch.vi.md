@@ -3,6 +3,7 @@ date = "2025-07-11T14:44:50+07:00"
 draft = false
 title = 'Git Branch'
 description = "Các lệnh Git branch thường dùng để tạo, xoá và dọn dẹp branch."
+summary = "Các lệnh Git branch thường dùng để tạo, xoá và dọn dẹp branch."
 slug = "git-branch"
 authors = [ ]
 tags = [ ]

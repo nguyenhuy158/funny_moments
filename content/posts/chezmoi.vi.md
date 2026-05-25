@@ -3,6 +3,7 @@ date = "2025-07-13T00:37:25+07:00"
 draft = false
 title = 'Chezmoi'
 description = "Hướng dẫn khởi tạo và áp dụng repository dotfiles chezmoi chỉ với một lệnh."
+summary = "Hướng dẫn khởi tạo và áp dụng repository dotfiles chezmoi chỉ với một lệnh."
 slug = "chezmoi"
 authors = [ ]
 tags = [ ]

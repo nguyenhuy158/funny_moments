@@ -2,6 +2,7 @@
 title = "How to Upgrade NixOS to 25.11"
 date = 2025-12-06T00:54:21+07:00
 description = "A step-by-step guide to upgrading your NixOS system to the latest 25.11 release."
+summary = "A step-by-step guide to upgrading your NixOS system to the latest 25.11 release."
 slug = "nixos-upgrade-25-11"
 tags = ["nixos", "linux", "upgrade", "tutorial"]
 categories = ["Linux", "NixOS"]

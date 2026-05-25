@@ -3,6 +3,7 @@ date = "2025-07-15T11:01:21+07:00"
 draft = false
 title = 'Rsync'
 description = "Các lệnh rsync hữu ích như một lựa chọn an toàn và linh hoạt hơn so với cp."
+summary = "Các lệnh rsync hữu ích như một lựa chọn an toàn và linh hoạt hơn so với cp."
 slug = "rsync"
 authors = [ ]
 tags = [ ]

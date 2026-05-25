@@ -3,6 +3,7 @@ date = "2025-07-08T23:00:53+07:00"
 draft = false
 title = 'Shell Env'
 description = "Why /usr/bin/env is a safer shebang choice for portable shell scripts across environments."
+summary = "Why /usr/bin/env is a safer shebang choice for portable shell scripts across environments."
 slug = "shell-env"
 authors = []
 tags = []

@@ -3,6 +3,7 @@ date = "2025-07-15T16:00:37+07:00"
 draft = false
 title = 'Git Config'
 description = "Ghi chú nhanh về cấu hình Git global, local và nơi các file cấu hình được lưu."
+summary = "Ghi chú nhanh về cấu hình Git global, local và nơi các file cấu hình được lưu."
 slug = "git-config"
 authors = [ ]
 tags = [ ]

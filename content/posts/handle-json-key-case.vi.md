@@ -3,6 +3,7 @@ date = '2025-07-03T10:17:23+07:00'
 draft = false
 title = 'Handle Json Key Case'
 description = "Chuẩn hoá kiểu viết key trong JSON trước khi map dữ liệu vào ứng dụng."
+summary = "Chuẩn hoá kiểu viết key trong JSON trước khi map dữ liệu vào ứng dụng."
 slug = "handle-json-key-case"
 authors = []
 tags = ["json", "python", "data-cleaning", "tips"]

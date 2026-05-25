@@ -3,6 +3,7 @@ date = "2025-08-29T17:16:07+07:00"
 draft = false
 title = 'The Art of Readable Code'
 description = "Summary notes from The Art of Readable Code with practical examples and takeaways."
+summary = "Summary notes from The Art of Readable Code with practical examples and takeaways."
 slug = "the-art-of-readable-code"
 authors = [ ]
 tags = [ "books", "code", "cleancode", "java", "js", "python" ]

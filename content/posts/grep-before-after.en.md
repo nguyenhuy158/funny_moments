@@ -3,6 +3,7 @@ date = "2025-07-22T08:52:58+07:00"
 draft = false
 title = 'Grep Before After'
 description = "Examples of grep context flags to show matching lines with output before and after."
+summary = "Examples of grep context flags to show matching lines with output before and after."
 slug = "grep-before-after"
 authors = [ ]
 tags = [ ]

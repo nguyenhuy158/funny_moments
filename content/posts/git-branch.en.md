@@ -3,6 +3,7 @@ date = "2025-07-11T14:44:47+07:00"
 draft = false
 title = 'Git Branch'
 description = "Common Git branch commands for creating, deleting, and cleaning up branches."
+summary = "Common Git branch commands for creating, deleting, and cleaning up branches."
 slug = "git-branch"
 authors = [ ]
 tags = [ ]

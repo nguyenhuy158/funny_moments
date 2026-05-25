@@ -3,6 +3,7 @@ date = "2025-07-13T00:37:21+07:00"
 draft = false
 title = 'Chezmoi'
 description = "Quick start guide to initialize and apply a chezmoi dotfiles repository with one command."
+summary = "Quick start guide to initialize and apply a chezmoi dotfiles repository with one command."
 slug = "chezmoi"
 authors = [ ]
 tags = [ ]

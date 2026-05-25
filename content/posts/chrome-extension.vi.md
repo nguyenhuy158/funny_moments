@@ -3,6 +3,7 @@ date = "2025-07-28T21:44:22+07:00"
 draft = false
 title = 'Chrome Extension'
 description = "Danh sách extension Chrome và các thành phần cài sẵn trong profile trình duyệt hiện tại."
+summary = "Danh sách extension Chrome và các thành phần cài sẵn trong profile trình duyệt hiện tại."
 slug = "chrome-extension"
 authors = [ ]
 tags = [ ]

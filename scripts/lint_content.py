@@ -9,6 +9,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / "content" / "posts"
+CONTENT_DIR = ROOT / "content"
 CONFIG_FILE = ROOT / "config.yaml"
 SEARCH_FILES = [
     ROOT / "content" / "search.md",
@@ -29,14 +30,13 @@ PLACEHOLDERS = {
 }
 
 
-def load_toml_frontmatter(path: Path) -> dict[str, str]:
-    text = path.read_text(encoding="utf-8")
+def load_toml_frontmatter(text: str) -> dict[str, str]:
     parts = text.split("+++", 2)
     if len(parts) != 3:
         raise ValueError("missing TOML frontmatter wrapped by +++")
     frontmatter = parts[1]
     data: dict[str, str] = {}
-    for key in ("title", "description", "slug"):
+    for key in ("title", "description", "slug", "summary"):
         match = re.search(rf"^{key}\s*=\s*(['\"])(.*?)\1\s*$", frontmatter, re.MULTILINE)
         if match:
             data[key] = match.group(2)
@@ -48,6 +48,28 @@ def load_toml_frontmatter(path: Path) -> dict[str, str]:
     if cover_match:
         data["image"] = cover_match.group(2)
     return data
+
+
+def load_yaml_frontmatter(text: str) -> dict[str, str]:
+    parts = text.split("---", 2)
+    if len(parts) != 3:
+        raise ValueError("missing YAML frontmatter wrapped by ---")
+    frontmatter = parts[1]
+    data: dict[str, str] = {}
+    for key in ("title", "description", "slug", "summary"):
+        match = re.search(rf"^{key}:\s*(['\"]?)(.*?)\1\s*$", frontmatter, re.MULTILINE)
+        if match:
+            data[key] = match.group(2)
+    return data
+
+
+def load_frontmatter(path: Path) -> dict[str, str]:
+    text = path.read_text(encoding="utf-8")
+    if text.startswith("+++"):
+        return load_toml_frontmatter(text)
+    if text.startswith("---"):
+        return load_yaml_frontmatter(text)
+    raise ValueError("missing supported frontmatter")
 
 
 def infer_language(path: Path) -> str:
@@ -80,12 +102,12 @@ def validate_posts(errors: list[str]) -> None:
 
     for path in sorted(POSTS_DIR.glob("*.md")):
         try:
-            frontmatter = load_toml_frontmatter(path)
+            frontmatter = load_frontmatter(path)
         except Exception as exc:
             errors.append(f"{path.relative_to(ROOT)}: {exc}")
             continue
 
-        for key in ("title", "description", "slug"):
+        for key in ("title", "description", "slug", "summary"):
             value = frontmatter.get(key)
             if not isinstance(value, str) or not value.strip():
                 errors.append(f"{path.relative_to(ROOT)}: missing or empty `{key}`")
@@ -112,6 +134,23 @@ def validate_posts(errors: list[str]) -> None:
             validate_image_path(path, image, errors)
 
 
+def validate_pages(errors: list[str]) -> None:
+    for path in sorted(CONTENT_DIR.rglob("*.md")):
+        if path.parent == POSTS_DIR:
+            continue
+
+        try:
+            frontmatter = load_frontmatter(path)
+        except Exception as exc:
+            errors.append(f"{path.relative_to(ROOT)}: {exc}")
+            continue
+
+        for key in ("title", "description", "summary"):
+            value = frontmatter.get(key)
+            if not isinstance(value, str) or not value.strip():
+                errors.append(f"{path.relative_to(ROOT)}: missing or empty `{key}`")
+
+
 def validate_placeholders(errors: list[str]) -> None:
     config_text = CONFIG_FILE.read_text(encoding="utf-8")
     for needle, label in PLACEHOLDERS.items():
@@ -127,6 +166,7 @@ def validate_placeholders(errors: list[str]) -> None:
 def main() -> int:
     errors: list[str] = []
     validate_posts(errors)
+    validate_pages(errors)
     validate_placeholders(errors)
 
     if errors:
