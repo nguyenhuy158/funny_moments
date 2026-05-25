@@ -102,6 +102,8 @@ params:
       url: "https://youtube.com/@ntqhuy2k2"
     - name: "Linkedin"
       url: "https://www.linkedin.com/in/nguyenhuy158"
+    - name: "daily.dev"
+      url: "https://app.daily.dev/nguyenhuy158"
     - name: "gitlab"
       url: "https://gitlab.com/huy.ntq02"
 
@@ -111,6 +113,7 @@ params:
       - "https://github.com/nguyenhuy158"
       - "https://youtube.com/@ntqhuy2k2"
       - "https://www.linkedin.com/in/nguyenhuy158"
+      - "https://app.daily.dev/nguyenhuy158"
       - "https://gitlab.com/huy.ntq02"
 
   # for search
