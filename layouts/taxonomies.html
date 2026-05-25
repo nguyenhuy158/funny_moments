@@ -1,0 +1,44 @@
+{{- define "main" }}
+
+<header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+        {{ .Description }}
+    </div>
+    {{- end }}
+</header>
+
+{{- if .Content }}
+<div class="post-content">
+    {{ .Content }}
+</div>
+{{- end }}
+
+{{- $taxonomies := slice
+    (dict "title" "Categories" "page" (site.GetPage "/categories") "terms" site.Taxonomies.categories)
+    (dict "title" "Tags" "page" (site.GetPage "/tags") "terms" site.Taxonomies.tags)
+-}}
+
+{{- range $taxonomies }}
+{{- $page := .page }}
+{{- $terms := .terms }}
+{{- $taxonomyType := $page.Type }}
+{{- if and $page $terms }}
+<section class="post-content">
+    <h2><a href="{{ $page.Permalink }}">{{ $page.LinkTitle }}</a></h2>
+    <ul class="terms-tags">
+        {{- range $terms.Alphabetical }}
+        {{- $termCount := .Count }}
+        {{- with site.GetPage (printf "/%s/%s" $taxonomyType .Name) }}
+        <li>
+            <a href="{{ .Permalink }}">{{ .LinkTitle }} <sup><strong><sup>{{ $termCount }}</sup></strong></sup></a>
+        </li>
+        {{- end }}
+        {{- end }}
+    </ul>
+</section>
+{{- end }}
+{{- end }}
+
+{{- end }}

@@ -146,14 +146,17 @@ menu:
     - name: Search
       url: search/
       weight: 5
+    - name: Taxonomies
+      url: /taxonomies/
+      weight: 6
     - identifier: categories
       name: Categories
       url: /categories/
-      weight: 6
+      weight: 7
     - identifier: tags
       name: Tags
       url: /tags/
-      weight: 7
+      weight: 8
     - name: Github
       url: https://github.com/nguyenhuy158
 
