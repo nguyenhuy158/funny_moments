@@ -41,7 +41,7 @@ sudo nix-channel --update
 
 **Crucial Step:** Before proceeding, make sure to read the release notes for any breaking changes that might affect your configuration.
 
-Check the release notes at: [nixos.org/manual/nixos/25.11/release-notes](https://nixos.org/manual/nixos/25.11/release-notes)
+Check the release notes at: [nixos.org/manual/nixos/stable/release-notes](https://nixos.org/manual/nixos/stable/release-notes)
 
 ## 5. Rebuild Your System
 

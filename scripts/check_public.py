@@ -11,11 +11,17 @@ REQUIRED_PATHS = [
     "404.html",
     "index.xml",
     "index.json",
+    "about/index.html",
+    "now/index.html",
+    "uses/index.html",
     "search/index.html",
     "tags/index.html",
     "categories/index.html",
     "vi/index.html",
     "vi/index.xml",
+    "vi/about/index.html",
+    "vi/now/index.html",
+    "vi/uses/index.html",
     "vi/search/index.html",
     "vi/tags/index.html",
     "vi/categories/index.html",
@@ -86,6 +92,24 @@ def main() -> int:
         public_dir,
         "categories/index.html",
         ["Categories", "Browse posts by topic"],
+        errors,
+    )
+    check_html_contains(
+        public_dir,
+        "about/index.html",
+        ["About", "technical notes"],
+        errors,
+    )
+    check_html_contains(
+        public_dir,
+        "now/index.html",
+        ["Current focus", "deployment reliability"],
+        errors,
+    )
+    check_html_contains(
+        public_dir,
+        "uses/index.html",
+        ["Tools I reach for most often", "GitHub Actions and Cloudflare"],
         errors,
     )
     check_html_contains(

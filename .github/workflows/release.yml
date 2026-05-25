@@ -88,10 +88,13 @@ jobs:
         run: python3 scripts/lint_content.py
 
       - name: Build production site
-        run: hugo --buildDrafts=false --buildFuture=false --minify
+        run: hugo --buildDrafts=false --buildFuture=false --gc --cleanDestinationDir --minify
 
       - name: Audit built output
         run: python3 scripts/check_public.py public
+
+      - name: Audit internal links
+        run: python3 scripts/check_links.py public
 
       - name: Include custom domain file
         run: |

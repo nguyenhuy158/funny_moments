@@ -25,6 +25,7 @@ PLACEHOLDERS = {
     "XYZabc": "site verification placeholder",
     "Search demo site with full text fuzzy search ...": "search placeholder text",
     "Discover insights and updates in my first blog post. Join me on this exciting journey of sharing thoughts and experiences!": "generic placeholder description",
+    "TODO: add a one-sentence description.": "draft description placeholder",
 }
 
 
