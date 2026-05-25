@@ -3,24 +3,28 @@
 ## Build Commands
 - **Development server**: `hugo server --disableFastRender --noHTTPCache --ignoreCache`
 - **Production build**: `hugo --buildDrafts=false --buildFuture=false --minify`
-- **New post**: `make new POST=post-name` or `hugo new posts/post-name.md`
+- **New post**: `make new POST=post-name.en` and create the matching `*.vi.md` variant before merging
 
 ## Testing & Quality
-- **No automated tests** - Manual content review required
-- **Build validation**: Run production build to check for Hugo errors
-- **Content validation**: Check frontmatter syntax and markdown formatting
+- **Build validation**: Run `make ci` or at minimum the production Hugo build
+- **Content validation**: `python3 scripts/lint_content.py`
+- **Output validation**: `python3 scripts/check_public.py public`
+- **Link validation**: `python3 scripts/check_links.py public`
+- **Production smoke**: `python3 scripts/smoke_site.py --base-url "https://huyab.click"`
 
 ## Code Style Guidelines
 - **Content**: Markdown with Hugo frontmatter (TOML format)
-- **Frontmatter fields**: title, date, description, slug, tags, categories, draft
+- **Frontmatter fields for posts**: title, date, description, summary, slug, tags, categories, draft
+- **Frontmatter fields for pages**: title, description, summary
 - **Naming**: Kebab-case for slugs and filenames (e.g., `hello-world.en.md`)
-- **Language support**: Bilingual content (en/vi) - use `.en.md`/`.vi.md` suffixes for translations, `.md` for single-language posts
+- **Language support**: All posts must be bilingual. Use `.en.md` and `.vi.md` pairs. Do not create single-language post files such as `post-name.md`.
 - **Imports**: No code imports - pure content site
 - **Error handling**: Hugo build errors indicate syntax issues
 
 ## Development Workflow
 - **Spec-driven development**: Use `.specify/` scripts for feature planning
 - **Content creation**: Follow Hugo archetypes in `archetypes/default.md`
+- **Bilingual rule**: CI fails if a post is missing either the English or Vietnamese variant
 - **Git workflow**: Feature branches with PR reviews
 - **Deployment**: Automated via Jenkins/GitHub Pages on main branch
 - **Release CI**: GitHub Actions release workflow runs on version tags and creates GitHub Releases
