@@ -19,6 +19,7 @@
       {{ .Description }}
     </div>
     {{- end }}
+    {{ partial "content_badge.html" . }}
     {{- if not (.Param "hideMeta") }}
     <div class="post-meta">
       {{- partial "post_meta.html" . -}}
@@ -44,6 +45,8 @@
   {{- end }}
 
   {{- partial "extend_post_content.html" . }}
+
+  {{- partial "related_content.html" . }}
 
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}

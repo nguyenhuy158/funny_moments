@@ -27,8 +27,12 @@
 {{- if and $page $terms }}
 <section class="post-content">
     <h2><a href="{{ $page.Permalink }}">{{ $page.LinkTitle }}</a></h2>
-    <ul class="terms-tags">
-        {{- range $terms.Alphabetical }}
+    {{- $sortedTerms := sort $terms.ByCount "Count" "desc" -}}
+    {{- if gt (len $sortedTerms) 8 }}
+    <p class="taxonomy-summary">{{ if eq $.Lang "vi" }}Các term được dùng nhiều nhất trước, phần còn lại phía dưới.{{ else }}Most-used terms first, then the long tail below.{{ end }}</p>
+    {{- end }}
+    <ul class="terms-tags terms-tags--top">
+        {{- range first 8 $sortedTerms }}
         {{- $termCount := .Count }}
         {{- with site.GetPage (printf "/%s/%s" $taxonomyType .Name) }}
         <li>
@@ -37,6 +41,21 @@
         {{- end }}
         {{- end }}
     </ul>
+    {{- if gt (len $sortedTerms) 8 }}
+    <details class="taxonomy-more">
+      <summary>{{ if eq $.Lang "vi" }}Xem toàn bộ{{ else }}See all{{ end }}</summary>
+      <ul class="terms-tags">
+        {{- range after 8 $sortedTerms }}
+        {{- $termCount := .Count }}
+        {{- with site.GetPage (printf "/%s/%s" $taxonomyType .Name) }}
+        <li>
+            <a href="{{ .Permalink }}">{{ .LinkTitle }} <sup><strong><sup>{{ $termCount }}</sup></strong></sup></a>
+        </li>
+        {{- end }}
+        {{- end }}
+      </ul>
+    </details>
+    {{- end }}
 </section>
 {{- end }}
 {{- end }}

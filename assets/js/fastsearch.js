@@ -13,10 +13,17 @@ let activeQuery = '';
 
 const defaultFuseOptions = {
     distance: 100,
-    threshold: 0.4,
+    threshold: 0.34,
     ignoreLocation: true,
     includeMatches: true,
-    keys: ['title', 'permalink', 'summary', 'content']
+    includeScore: true,
+    keys: [
+        { name: 'title', weight: 0.45 },
+        { name: 'summary', weight: 0.25 },
+        { name: 'tags', weight: 0.15 },
+        { name: 'categories', weight: 0.1 },
+        { name: 'content', weight: 0.05 }
+    ]
 };
 
 const buildFuseOptions = () => {
@@ -86,6 +93,42 @@ const buildSnippet = (item, query) => {
         : cleanedSource.slice(0, 180);
 
     return `${highlightText(snippet, query)}${cleanedSource.length > snippet.length ? '…' : ''}`;
+};
+
+const formatSectionLabel = (item) => {
+    if (item.section === 'notes') {
+        return item.lang === 'vi' ? 'Ghi chú' : 'Note';
+    }
+
+    return item.lang === 'vi' ? 'Bài viết' : 'Post';
+};
+
+const rankResults = (results, query) => {
+    const normalizedQuery = query.trim().toLowerCase();
+    return [...results].sort((left, right) => {
+        const leftTitle = left.item.title.toLowerCase();
+        const rightTitle = right.item.title.toLowerCase();
+        const leftTags = (left.item.tags || []).map((tag) => String(tag).toLowerCase());
+        const rightTags = (right.item.tags || []).map((tag) => String(tag).toLowerCase());
+        const leftExact = leftTitle === normalizedQuery ? 1 : 0;
+        const rightExact = rightTitle === normalizedQuery ? 1 : 0;
+        const leftPrefix = leftTitle.startsWith(normalizedQuery) ? 1 : 0;
+        const rightPrefix = rightTitle.startsWith(normalizedQuery) ? 1 : 0;
+        const leftTagHit = leftTags.includes(normalizedQuery) ? 1 : 0;
+        const rightTagHit = rightTags.includes(normalizedQuery) ? 1 : 0;
+
+        if (leftExact !== rightExact) {
+            return rightExact - leftExact;
+        }
+        if (leftPrefix !== rightPrefix) {
+            return rightPrefix - leftPrefix;
+        }
+        if (leftTagHit !== rightTagHit) {
+            return rightTagHit - leftTagHit;
+        }
+
+        return (left.score ?? 0) - (right.score ?? 0);
+    });
 };
 
 const updateStatus = (message) => {
@@ -180,7 +223,7 @@ const renderResults = (results) => {
 
         const meta = document.createElement('span');
         meta.className = 'search-result-meta';
-        meta.textContent = new URL(item.permalink).pathname;
+        meta.textContent = `${formatSectionLabel(item)} · ${new URL(item.permalink).pathname}`;
 
         const snippet = document.createElement('span');
         snippet.className = 'search-result-snippet';
@@ -217,7 +260,7 @@ const performSearch = () => {
 
     const searchOptions = params.fuseOpts?.limit ? { limit: params.fuseOpts.limit } : undefined;
     const results = searchOptions ? fuse.search(query, searchOptions) : fuse.search(query);
-    renderResults(results);
+    renderResults(rankResults(results, query));
 };
 
 const initSearch = async () => {

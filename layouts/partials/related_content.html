@@ -1,0 +1,48 @@
+{{- $tags := .Params.tags | default (slice) -}}
+{{- $categories := .Params.categories | default (slice) -}}
+{{- $candidates := slice -}}
+{{- range site.RegularPages -}}
+  {{- if and (eq .Lang $.Lang) (ne .Permalink $.Permalink) (not .Draft) -}}
+    {{- $candidateTags := .Params.tags | default (slice) -}}
+    {{- $candidateCategories := .Params.categories | default (slice) -}}
+    {{- $sharedTags := len (intersect $tags $candidateTags) -}}
+    {{- $sharedCategories := len (intersect $categories $candidateCategories) -}}
+    {{- $sameSectionBonus := cond (eq .Section $.Section) 1 0 -}}
+    {{- $score := add (add (mul $sharedTags 3) (mul $sharedCategories 2)) $sameSectionBonus -}}
+    {{- if gt $score 0 -}}
+      {{- $candidates = $candidates | append (dict "page" . "score" $score) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $ranked := sort $candidates "score" "desc" -}}
+{{- if gt (len $ranked) 0 -}}
+  {{- $isVi := eq .Lang "vi" -}}
+  {{- $lead := index $ranked 0 -}}
+  <section class="related-content">
+    <div class="related-content__lead">
+      <p class="related-content__eyebrow">{{ cond $isVi "Nên đọc tiếp" "Next best read" }}</p>
+      <a class="related-content__card" href="{{ $lead.page.Permalink }}">
+        {{ partial "content_badge.html" $lead.page }}
+        <strong>{{ $lead.page.Title }}</strong>
+        <span>{{ $lead.page.Summary | plainify | htmlUnescape }}</span>
+      </a>
+    </div>
+
+    {{- if gt (len $ranked) 1 -}}
+    <div class="related-content__list">
+      <p class="related-content__eyebrow">{{ cond $isVi "Bài liên quan" "Related posts" }}</p>
+      <ul>
+        {{- range first 3 (after 1 $ranked) -}}
+        <li>
+          <a href="{{ .page.Permalink }}">
+            {{ partial "content_badge.html" .page }}
+            <span>{{ .page.Title }}</span>
+          </a>
+        </li>
+        {{- end -}}
+      </ul>
+    </div>
+    {{- end -}}
+  </section>
+{{- end -}}

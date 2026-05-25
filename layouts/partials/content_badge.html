@@ -1,0 +1,4 @@
+{{- $isVi := eq .Lang "vi" -}}
+{{- if eq .Section "notes" -}}
+<span class="content-badge">{{ cond $isVi "Ghi chú" "Note" }}</span>
+{{- end -}}
