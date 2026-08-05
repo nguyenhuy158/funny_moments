@@ -47,6 +47,12 @@ configure_git() {
 }
 
 
+lint_content() {
+  echo "Linting content metadata..."
+  python3 scripts/lint_content.py
+}
+
+
 build_site() {
   local base_url
 
@@ -68,9 +74,20 @@ build_site() {
 }
 
 
+audit_output() {
+  echo "Auditing built output..."
+  python3 scripts/check_public.py public
+
+  echo "Auditing internal links..."
+  python3 scripts/check_links.py public
+}
+
+
 main() {
   install_hugo
+  lint_content
   build_site
+  audit_output
 }
 
 
