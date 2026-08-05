@@ -13,7 +13,7 @@ import sys
 
 SKIPPED_SCHEMES = ("mailto:", "tel:", "javascript:", "data:")
 SKIPPED_STATUSES = {401, 403, 405}
-INTERNAL_HOSTS = {"huyab.click", "www.huyab.click", "profile.huycode.workers.dev"}
+INTERNAL_HOSTS = {"profile.huyab.click", "huyab.click", "www.huyab.click", "profile.huycode.workers.dev"}
 SKIPPED_EXTERNAL_HOSTS = {"www.linkedin.com", "linkedin.com", "www.willus.com", "willus.com"}
 
 

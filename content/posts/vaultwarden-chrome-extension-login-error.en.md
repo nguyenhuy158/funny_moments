@@ -2,6 +2,8 @@
 date = '2026-08-05T21:10:00+07:00'
 draft = false
 title = 'Vaultwarden: Web login works but Chrome Extension says "An error has occurred"'
+description = "Debugging a self-hosted Vaultwarden issue where the Chrome extension fails to log in while the web vault works fine - turned out to be a stale server version."
+slug = "vaultwarden-chrome-extension-login-error"
 author = []
 summary = "Debugging a self-hosted Vaultwarden issue where the Chrome extension fails to log in while the web vault works fine - turned out to be a stale server version."
 tags = ["docker", "vaultwarden", "selfhost", "bitwarden", "chrome"]

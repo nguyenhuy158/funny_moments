@@ -71,7 +71,7 @@ def main() -> int:
             "application/ld+json",
             "SearchAction",
             "rel=me",
-            "https://huyab.click/search/?q={search_term_string}",
+            "https://profile.huyab.click/search/?q={search_term_string}",
         ],
         errors,
     )
@@ -82,7 +82,7 @@ def main() -> int:
             "application/ld+json",
             "SearchAction",
             "rel=me",
-            "https://huyab.click/vi/search/?q={search_term_string}",
+            "https://profile.huyab.click/vi/search/?q={search_term_string}",
         ],
         errors,
     )

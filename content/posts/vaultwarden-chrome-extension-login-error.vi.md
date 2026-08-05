@@ -2,6 +2,8 @@
 date = '2026-08-05T21:10:00+07:00'
 draft = false
 title = 'Vaultwarden: Login web OK nhưng Chrome Extension báo "An error has occurred"'
+description = "Debug lỗi Chrome extension không login được vào Vaultwarden self-host trong khi web vẫn login bình thường - nguyên nhân là version server quá cũ."
+slug = "vaultwarden-chrome-extension-login-error"
 author = []
 summary = "Debug lỗi Chrome extension không login được vào Vaultwarden self-host trong khi web vẫn login bình thường - nguyên nhân là version server quá cũ."
 tags = ["docker", "vaultwarden", "selfhost", "bitwarden", "chrome"]
