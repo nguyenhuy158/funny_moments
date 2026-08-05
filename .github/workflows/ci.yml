@@ -165,7 +165,7 @@ jobs:
       - name: Run Cloudflare build script
         shell: bash
         env:
-          HUGO_BASE_URL: https://huyab.click
+          HUGO_BASE_URL: https://profile.huyab.click
         run: |
           chmod a+x build.sh
           ./build.sh
