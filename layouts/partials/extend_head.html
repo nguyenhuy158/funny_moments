@@ -669,6 +669,70 @@
   .content-badge {
     color: var(--accent);
   }
+
+  /* --- Navbar visual sync (mytools palette) -------------------------- */
+  .header-nav {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo a {
+    background: linear-gradient(to right, #2563eb, #4f46e5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+  }
+
+  .dark .logo a,
+  [data-theme="dark"] .logo a {
+    background: linear-gradient(to right, #60a5fa, #818cf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .menu {
+    column-gap: 1.35rem;
+  }
+
+  .menu a {
+    font-weight: 500;
+    color: var(--content);
+    transition: color 0.15s ease;
+  }
+
+  .menu a span {
+    padding-bottom: 0.15rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .menu a:hover span,
+  .menu a:focus-visible span {
+    color: #2563eb;
+    border-bottom-color: #2563eb;
+  }
+
+  .dark .menu a:hover span,
+  .dark .menu a:focus-visible span,
+  [data-theme="dark"] .menu a:hover span,
+  [data-theme="dark"] .menu a:focus-visible span {
+    color: #60a5fa;
+    border-bottom-color: #60a5fa;
+  }
+
+  .menu .active {
+    color: #2563eb;
+    font-weight: 500;
+    border-bottom: 2px solid #2563eb;
+    text-decoration: none;
+  }
+
+  .dark .menu .active,
+  [data-theme="dark"] .menu .active {
+    color: #60a5fa;
+    border-bottom-color: #60a5fa;
+  }
 </style>
 
 {{- if .IsHome }}
