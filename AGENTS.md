@@ -10,7 +10,7 @@
 - **Content validation**: `python3 scripts/lint_content.py`
 - **Output validation**: `python3 scripts/check_public.py public`
 - **Link validation**: `python3 scripts/check_links.py public`
-- **Production smoke**: `python3 scripts/smoke_site.py --base-url "https://huyab.click"`
+- **Production smoke**: `python3 scripts/smoke_site.py --base-url "https://huyab.cfd"`
 
 ## Code Style Guidelines
 - **Content**: Markdown with Hugo frontmatter (TOML format)

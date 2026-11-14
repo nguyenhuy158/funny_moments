@@ -42,7 +42,7 @@ SMOKE_CASES = [
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--base-url", default="https://huyab.click")
+    parser.add_argument("--base-url", default="https://huyab.cfd")
     parser.add_argument("--retries", type=int, default=1)
     parser.add_argument("--delay", type=int, default=10)
     parser.add_argument("--timeout", type=int, default=15)
