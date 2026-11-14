@@ -21,7 +21,7 @@ Use this checklist before publishing a new post or updating an existing one.
 ## Validation
 
 - `python3 scripts/lint_content.py`
-- `hugo --buildDrafts=false --buildFuture=false --gc --minify --baseURL "https://huyab.click"`
+- `hugo --buildDrafts=false --buildFuture=false --gc --minify --baseURL "https://huyab.cfd"`
 - `python3 scripts/check_public.py public`
 - `python3 scripts/check_links.py public`
 
